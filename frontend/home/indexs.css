@@ -1,0 +1,109 @@
+* {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif, "Poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.logo1 {
+  width: 25%;
+}
+.logoAwal {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+.menuAwal {
+  width: 50%;
+  margin-top: 40px;
+}
+.menuAwal,
+a {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+.menuAwal a:hover {
+  color: #9656a1;
+}
+.menuLatihan {
+  margin-right: 20px;
+}
+.btnAwal {
+  width: 25%;
+  text-align: center;
+  margin-top: 40px;
+}
+.btnMasuk {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+.btnMasuk:hover {
+  color: #9656a1;
+}
+.btnDaftar {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: #9656a1;
+  margin-left: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.btnDaftar:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.main1 {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.paragraf1 {
+  font-size: 75px;
+  font-family: "Poppins";
+  font-weight: 700;
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+span {
+  color: #9656a1;
+}
+
+.main2 {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.paragraf2 {
+  font-size: 20px;
+  font-family: "Sans serif";
+  font-weight: 400;
+  color: black;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoHome {
+  width: 400px;
+  height: 400px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
