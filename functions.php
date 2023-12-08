@@ -4,7 +4,9 @@ require_once("config.php");
 function register($data){
     global $mysqli;
     $username = strtolower(stripslashes($data["username"]));
+    $nama = strtolower(stripslashes($data["nama"]));
     $email = strtolower(stripslashes($data["email"]));
+    $role = strtolower(stripslashes($data["role"]));
     $password = mysqli_real_escape_string($mysqli, $data["password"]);
     $password2 = mysqli_real_escape_string($mysqli, $data["password2"]);
 
@@ -28,8 +30,28 @@ function register($data){
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     //memasukan data ke database
-    mysqli_query($mysqli, "INSERT INTO user(username,email,password) VALUES('$username', '$email', '$password')");
+    mysqli_query($mysqli, "INSERT INTO user(username,nama,role,email,password) VALUES('$username','$nama','$role', '$email', '$password')");
     return mysqli_affected_rows($mysqli);
 }
 
+function login ($data){
+    global $mysqli;
+    $username = $data["username"];
+    $password = $data["password"];
+
+    //cek username
+    $result = mysqli_query($mysqli, "SELECT * FROM user WHERE username = '$username'");
+    if(mysqli_num_rows($result) === 1){
+        //cek password
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password, $row["password"])){
+            //set session
+            $_SESSION["login"] = true;
+            $_SESSION["username"] = $username;
+            $_SESSION["role"] = $row["role"];
+            $_SESSION["nama"] = $row["nama"];   
+        }
+    }
+    return mysqli_affected_rows($mysqli);
+}
 ?>

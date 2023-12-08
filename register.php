@@ -34,6 +34,19 @@ if(isset($_POST["register"])){
             <td><input type="email" name="email"></td>
         </tr>
         <tr>
+            <td>Nama</td>
+            <td><input type="text" name="nama"></td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>
+                <select name="role">
+                    <option value="guru">Guru</option>
+                    <option value="siswa">Siswa</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <td>Password</td>
             <td><input type="password" name="password"></td>
         </tr>

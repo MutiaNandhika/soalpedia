@@ -1,29 +1,23 @@
 <?php
 session_start();
-require_once("functions.php");
 if(!isset($_SESSION["login"])){
     header("Location: login.php");
     exit;
 }
+require_once("functions.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Queasy</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Ini Homepage</h1>
-    <?php if(!isset($_SESSION["login"])) : ?>
-        <a href="login.php">Login disini</a>
-        <br>
-        <a href="register.php">Register disini</a>
+    <h1>Selamat datang, <?= $_SESSION["nama"]; ?></h1>
+    <?php if ($_SESSION["role"] == "admin") : ?>
+        <a href="admin.php">Admin</a>
     <?php endif; ?>
-    <?php if(isset($_SESSION["login"])) : ?>
-        <p>Halo, anda berhasil login sebagai <?php echo $_SESSION["username"]; ?></p>
-        <a href="logout.php">Logout disini</a>
-    <?php endif; ?>
-    
+    <a href="logout.php">Logout</a>
 </body>
 </html>
