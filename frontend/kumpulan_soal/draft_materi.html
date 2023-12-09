@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
   </head>
+  
   <body>
     <nav class="header">
       <div class="logo1">
@@ -32,37 +33,40 @@
     </nav>
 
     <div class="heading">
-      <!-- Tambah Materi -Menu Buat User Guru,Admin -->
-      <div class="tambahSoal">
-        <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="">Tambah Materi</a>
-      </div>
-
-      <!-- Dropdown -Menu Buat User Siswa -->
-      <div class="dropdown">
-        <button>Pilih Kelas</button>
-        <div class="dropdown-content">
-          <a href="#">Kelas 12</a>
-          <a href="#">Kelas 11</a>
-          <a href="#">Kelas 10</a>
-        </div>
-      </div>
+      <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="../mapel/mapel.html">Back</a>
     </div>
 
     <center>
-    <div class="main">
-      <!-- Nama Mapel -->
-        <div class="namaMapel">
-            <p>Geografi <span class="kelas">XI IPS</span></p> <!-- Nama Mapel -->
+      <div class="main">
+        <!-- Nama Mapel -->
+          <div class="namaMapel">
+              <p>Geografi</p>
+          </div>
+  
+        <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
+        <div class="dropdown">
+          <button>Pilih Kelas</button>
+          <div class="dropdown-content">
+            <a href="#">Kelas 12</a>
+            <a href="#">Kelas 11</a>
+            <a href="#">Kelas 10</a>
+          </div>
         </div>
-
-      <!-- Searching -->
-        <div class="search">
-            <label for="search"></label>
-            <input type="text" name="search" placeholder="Cari...">
+  
+        <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+        <div class="tambahSoal">
+          <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="">Tambah Soal</a>
         </div>
-    </div>
-    </center>
+  
+        <!-- Searching -->
+          <div class="search">
+              <label for="search"></label>
+              <input type="text" name="search" placeholder="Cari...">
+          </div>
+      </div>
+      </center>
 
     <div class="draft">
         <div class="draftMapel">

@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
   </head>
+  
   <body>
     <nav class="header">
       <div class="logo1">
@@ -27,30 +28,43 @@
       </div>
       <div class="btnAwal">
         <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html"
-          >Keluar</a
-        >
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
       </div>
     </nav>
 
-    <!-- Tambah Materi -Menu buat User Guru,Admin -->
-    <div class="tambahSoal">
-      <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
-      <a class="tambah" href="">Tambah Materi</a>
+    <div class="heading">
+      <a href="draft_materi.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="draft_materi.html">Back</a>
     </div>
 
     <center>
       <div class="main">
         <!-- Nama Mapel -->
-        <div class="namaMapel">
-          <p>Geografi <span class="kelas">XI IPS</span></p>
+          <div class="namaMapel">
+              <p>Geografi</p>
+          </div>
+  
+        <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
+        <div class="dropdown">
+          <button>Pilih Kelas</button>
+          <div class="dropdown-content">
+            <a href="#">Kelas 12</a>
+            <a href="#">Kelas 11</a>
+            <a href="#">Kelas 10</a>
+          </div>
         </div>
-
+  
+        <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+        <div class="tambahSoal">
+          <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="">Tambah Soal</a>
+        </div>
+  
         <!-- Searching -->
-        <div class="search">
-          <label for="search"></label>
-          <input type="text" name="search" placeholder="Cari..." />
-        </div>
+          <div class="search">
+              <label for="search"></label>
+              <input type="text" name="search" placeholder="Cari...">
+          </div>
       </div>
 
       <div class="download">

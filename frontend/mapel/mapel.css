@@ -129,3 +129,19 @@ body {
   font-weight: 600;
   color: black;
 }
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #9656a1;
+  justify-content: center;
+}
+.copyRight {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 6px 20px;
+}

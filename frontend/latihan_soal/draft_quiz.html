@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <nav class="header">
       <div class="logo1">
@@ -32,13 +33,18 @@
     </nav>
 
     <div class="heading">
-      <!-- Tambah Soal -Menu Buat User Guru,Admin -->
-      <div class="tambahSoal">
-        <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="">Tambah Soal</a>
-      </div>
+      <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="../mapel/mapel.html">Back</a>
+    </div>
 
-      <!-- Dropdown -Menu Buat User Siswa -->
+    <center>
+    <div class="main">
+      <!-- Nama Mapel -->
+        <div class="namaMapel">
+            <p>Bahasa Indonesia</p>
+        </div>
+
+      <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa -->
       <div class="dropdown">
         <button>Pilih Kelas</button>
         <div class="dropdown-content">
@@ -47,14 +53,12 @@
           <a href="#">Kelas 10</a>
         </div>
       </div>
-    </div>
 
-    <center>
-    <div class="main">
-      <!-- Nama Mapel -->
-        <div class="namaMapel">
-            <p>Geografi <span class="kelas">XI IPS</span></p>
-        </div>
+      <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+      <div class="tambahSoal">
+        <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+        <a class="tambah" href="">Tambah Soal</a>
+      </div>
 
       <!-- Searching -->
         <div class="search">

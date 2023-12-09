@@ -88,20 +88,58 @@ body {
 .heading {
   margin-left: 6%;
   margin-right: auto;
-  display: flex;
-  flex-direction: row;
   width: 30%;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.heading a{
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.heading img{
+  width: 25px;
+  height: 25px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: auto;
+  background-color: #e78fb3;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: right;
+  border-radius: 10px;
+}
+.namaMapel {
+  max-width: 20%;
+  margin-left: 20px;
+  font-family: "Poppins";
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+.kelas {
+  font-family: "PT Sans";
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
 }
 .tambahSoal {
   display: flex;
   flex-direction: row;
-  width: 140px;
-  height: auto;
+  width: 12%;
   background-color: #9656a1;
-  justify-content: right;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  margin: auto 0;
   padding-bottom: 1px;
   padding-top: 4px;
   padding-right: 4px;
@@ -123,18 +161,20 @@ body {
 }
 .dropdown {
   display: inline-block;
+  width: 10%;
+  margin: auto 0;
 }
 .dropdown button {
-  background-color: #9656a1;
-  color: white;
+  background-color: white;
+  color: #9656a1;
   font-family: "Poppins";
   font-size: 15px;
   font-weight: 400;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   padding: 6px 10px;
-  margin-left: 10px;
+  margin-left: auto;
   margin-right: auto;
 }
 .dropdown a {
@@ -150,49 +190,25 @@ body {
   display: none;
   position: absolute;
   background-color: #9656a1;
-  min-width: 160px;
+  min-width: 100px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .dropdown:hover button {
   background-color: #e8da5d;
+  color: white;
 }
 .dropdown a:hover {
-  background-color: cadetblue;
-}
-
-.main {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  height: auto;
-  background-color: #e78fb3;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: right;
-  border-radius: 10px;
-}
-.namaMapel {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Poppins";
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
-}
-.kelas {
-  font-family: "PT Sans";
-  font-size: 12px;
-  font-weight: 400;
+  background-color: #e8da5d;
+  border-radius: 5px;
   color: white;
 }
 .search {
   width: 40%;
   margin-left: auto;
-  margin-right: auto;
 }
 .search input {
   width: 40%;
@@ -210,6 +226,7 @@ body {
   margin-left: 50%;
   margin-right: auto;
 }
+
 
 .draft {
   width: 90%;

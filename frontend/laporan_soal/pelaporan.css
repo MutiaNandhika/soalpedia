@@ -85,6 +85,28 @@ body {
   color: white;
 }
 
+.heading {
+  margin-left: 6%;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.heading a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.heading img {
+  width: 25px;
+  height: 25px;
+}
+
 .main {
   display: flex;
   flex-direction: row;

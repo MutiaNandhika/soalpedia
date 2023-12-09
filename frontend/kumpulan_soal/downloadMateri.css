@@ -84,17 +84,65 @@ body {
   color: white;
 }
 
+.heading {
+  margin-left: 6%;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.heading a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.heading img {
+  width: 25px;
+  height: 25px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: auto;
+  background-color: #e78fb3;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: right;
+  border-radius: 10px;
+}
+.namaMapel {
+  max-width: 20%;
+  margin-left: 20px;
+  font-family: "Poppins";
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+.kelas {
+  font-family: "PT Sans";
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+}
 .tambahSoal {
   display: flex;
   flex-direction: row;
-  width: 160px;
-  height: auto;
+  width: 12%;
   background-color: #9656a1;
-  margin-left: 6%;
-  justify-content: right;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 4px 10px 1px 0px;
+  border-radius: 5px;
+  margin: auto 0;
+  padding-bottom: 1px;
+  padding-top: 4px;
+  padding-right: 4px;
+  justify-content: center;
 }
 .tambahSoal:hover {
   background-color: #e8da5d;
@@ -110,38 +158,56 @@ body {
   font-weight: 400;
   color: white;
 }
-
-.main {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  height: auto;
-  background-color: #e78fb3;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: right;
-  border-radius: 10px;
+.dropdown {
+  display: inline-block;
+  width: 10%;
+  margin: auto 0;
 }
-.namaMapel {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+.dropdown button {
+  background-color: white;
+  color: #9656a1;
   font-family: "Poppins";
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
-}
-.kelas {
-  font-family: "PT Sans";
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dropdown a {
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #9656a1;
+  min-width: 100px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover button {
+  background-color: #e8da5d;
+  color: white;
+}
+.dropdown a:hover {
+  background-color: #e8da5d;
+  border-radius: 5px;
   color: white;
 }
 .search {
   width: 40%;
   margin-left: auto;
-  margin-right: auto;
 }
 .search input {
   width: 40%;
@@ -192,7 +258,7 @@ body {
   border-radius: 5px;
 }
 .edit img:hover {
-  background-color: #E78FB3;
+  background-color: #e78fb3;
 }
 .trash img {
   width: 25px;
@@ -203,7 +269,7 @@ body {
   border-radius: 5px;
 }
 .trash img:hover {
-  background-color: #E78FB3;
+  background-color: #e78fb3;
 }
 .unduh img {
   width: 25px;
@@ -213,7 +279,7 @@ body {
   border-radius: 5px;
 }
 .unduh img:hover {
-  background-color: #E78FB3;
+  background-color: #e78fb3;
 }
 .kritik-saran {
   display: flex;
@@ -244,7 +310,6 @@ body {
   color: white;
   margin-top: 7px;
 }
-
 
 footer {
   width: 100%;
