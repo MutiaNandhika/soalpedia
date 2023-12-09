@@ -21,10 +21,9 @@
         <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
       </div>
       <div class="menuAwal">
-        <a class="menuLatihan" href="../soal/latihanSoal.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../soal/kumpulanSoal.html"
-          >Kumpulan Soal</a
-        >
+        <!-- Menu Latihan dan Kumpulan -->
+        <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
+        <a class="menuKumpulan" href="draft_materi.html">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
         <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
@@ -34,12 +33,20 @@
       </div>
     </nav>
 
+    <!-- Tambah Materi -Menu buat User Guru,Admin -->
+    <div class="tambahSoal">
+      <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+      <a class="tambah" href="">Tambah Materi</a>
+    </div>
+
     <center>
       <div class="main">
+        <!-- Nama Mapel -->
         <div class="namaMapel">
           <p>Geografi <span class="kelas">XI IPS</span></p>
-          <!-- Nama Mapel -->
         </div>
+
+        <!-- Searching -->
         <div class="search">
           <label for="search"></label>
           <input type="text" name="search" placeholder="Cari..." />
@@ -47,6 +54,7 @@
       </div>
 
       <div class="download">
+        <!-- TABEL Materi -->
         <table border="0" cellpadding="10" cellspacing="0">
             <tr>
                 <th>Nama</th>
@@ -62,12 +70,25 @@
                 <td>PDF</td>
                 <td>10 November 2023</td>
                 <td>1,8 MB</td>
-                <td><a class="unduh" href="">Unduh</a></td>
+                <td>
+                  <!-- Tombol Edit, Hapus, Unduh bisa buat user Guru,Admin -->
+                  <a class="edit" href=""><img src="../icon/edit.svg" alt=""></a>
+                  <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+                  <!-- Tombol Unduh hanya bisa buat user Siswa -->
+                  <a class="unduh" href=""><img src="../icon/unduh.svg" alt=""></a>
+
+                  <!-- Tombol Kritik & Saran buat user Editor -->
+                  <div class="kritik-saran">
+                    <a class="add-kritik" href=""><img src="../icon/add.svg" alt="" /></a>
+                    <a class="krisan" href="">Kritik & Saran</a>
+                  </div>
+                </td>
             </tr>
         </table>
       </div>
     </center>
 
+    <!-- FOOTER -->
     <footer>
       <p class="copyRight">&copy; 2023, SoalPedia</p>
     </footer>

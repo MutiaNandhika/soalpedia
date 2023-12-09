@@ -21,67 +21,69 @@
         <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
       </div>
       <div class="menuAwal">
-        <a class="menuLatihan" href="../soal/latihanSoal.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../soal/kumpulanSoal.html"
-          >Kumpulan Soal</a
-        >
+        <!-- Menu Latihan dan Kumpulan -->
+        <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
+        <a class="menuKumpulan" href="draft_materi.html">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
         <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html"
-          >Keluar</a
-        >
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
       </div>
     </nav>
 
-    <center>
-      <div class="main">
-        <div class="namaMapel">
-          <p>Geografi <span class="kelas">XI IPS</span></p>
-          <!-- Nama Mapel -->
-        </div>
-        <div class="search">
-          <label for="search"></label>
-          <input type="text" name="search" placeholder="Cari..." />
-        </div>
+    <div class="heading">
+      <!-- Tambah Materi -Menu Buat User Guru,Admin -->
+      <div class="tambahSoal">
+        <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+        <a class="tambah" href="">Tambah Materi</a>
       </div>
-    </center>
 
-    <div class="draft">
-      <div class="draftLatihan">
-        <img src="../gambar/materi.svg" alt="" />
-        <a class="namaLatihan" href="download_materi.html"
-          >Kumpulan Soal PTS Semester 1</a
-        >
-      </div>
-      <div class="draftLatihan">
-        <img src="../gambar/materi.svg" alt="" />
-        <a class="namaLatihan" href="download_materi.html"
-          >Kumpulan Soal PTS Semester 2</a
-        >
-      </div>
-      <div class="draftLatihan">
-        <img src="../gambar/materi.svg" alt="" />
-        <a class="namaLatihan" href="download_materi.html"
-          >Kumpulan Soal PTA Semester 1</a
-        >
-      </div>
-      <div class="draftLatihan">
-        <img src="../gambar/materi.svg" alt="" />
-        <a class="namaLatihan" href="download_materi.html"
-          >Kumpulan Soal PTA Semester 2</a
-        >
-      </div>
-      <div class="draftLatihan">
-        <img src="../gambar/materi.svg" alt="" />
-        <a class="namaLatihan" href="download_materi.html"
-          >Kumpulan Soal PTS Semester 3</a
-        >
+      <!-- Dropdown -Menu Buat User Siswa -->
+      <div class="dropdown">
+        <button>Pilih Kelas</button>
+        <div class="dropdown-content">
+          <a href="#">Kelas 12</a>
+          <a href="#">Kelas 11</a>
+          <a href="#">Kelas 10</a>
+        </div>
       </div>
     </div>
 
+    <center>
+    <div class="main">
+      <!-- Nama Mapel -->
+        <div class="namaMapel">
+            <p>Geografi <span class="kelas">XI IPS</span></p> <!-- Nama Mapel -->
+        </div>
+
+      <!-- Searching -->
+        <div class="search">
+            <label for="search"></label>
+            <input type="text" name="search" placeholder="Cari...">
+        </div>
+    </div>
+    </center>
+
+    <div class="draft">
+        <div class="draftMapel">
+            <!-- List Materi -->
+            <div class="listMapel">
+              <img src="../gambar/materi.svg" alt="">
+              <a class="mapel-1" href="download_materi.html">Kumpulan Soal UTS Semester 1</a>
+            </div>
+
+            <!-- Tombol -->
+            <div class="icon">
+              <!-- Tombol Edit dan Hapus buat User Guru,Admin -->
+              <a class="edit" href=""><img src="../icon/edit.svg" alt=""></a>
+              <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer>
-      <p class="copyRight">&copy; 2023, SoalPedia</p>
+        <p class="copyRight">&copy; 2023, SoalPedia</p>
     </footer>
   </body>
 </html>

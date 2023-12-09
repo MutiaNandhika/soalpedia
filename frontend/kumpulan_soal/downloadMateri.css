@@ -84,6 +84,33 @@ body {
   color: white;
 }
 
+.tambahSoal {
+  display: flex;
+  flex-direction: row;
+  width: 160px;
+  height: auto;
+  background-color: #9656a1;
+  margin-left: 6%;
+  justify-content: right;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 4px 10px 1px 0px;
+}
+.tambahSoal:hover {
+  background-color: #e8da5d;
+}
+.add img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+.tambah {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
+
 .main {
   display: flex;
   flex-direction: row;
@@ -133,35 +160,91 @@ body {
   margin-right: auto;
 }
 
-.download{
-    width: 90%;
-    height: auto;
-    background-color: transparent;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Poppins';
-    color: black;
+.download {
+  width: 90%;
+  height: auto;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins";
+  color: black;
 }
-.download table{
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    background-color: transparent;
-    margin-top: 10px;
+.download table {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-top: 10px;
 }
-.download table tr{
-    border-bottom: 1px solid grey;
+.download table tr {
+  border-bottom: 1px solid grey;
 }
-.unduh{
-    color: black;
+.edit img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background-color: #e8da5d;
+  padding: 3px;
+  border-radius: 5px;
 }
-.unduh:hover{
-    color: #e78fb3;
+.edit img:hover {
+  background-color: #E78FB3;
 }
+.trash img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background-color: #b20040;
+  padding: 3px;
+  border-radius: 5px;
+}
+.trash img:hover {
+  background-color: #E78FB3;
+}
+.unduh img {
+  width: 25px;
+  height: 25px;
+  background-color: #999999;
+  padding: 3px;
+  border-radius: 5px;
+}
+.unduh img:hover {
+  background-color: #E78FB3;
+}
+.kritik-saran {
+  display: flex;
+  flex-direction: row;
+  width: 110px;
+  height: auto;
+  background-color: #9656a1;
+  border-radius: 10px;
+  padding: 0 6px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kritik-saran:hover {
+  background-color: #e78fb3;
+}
+.add-kritik img {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 5px;
+}
+.krisan {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  margin-top: 7px;
+}
+
 
 footer {
   width: 100%;
