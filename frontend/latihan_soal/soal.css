@@ -1,0 +1,208 @@
+* {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif, "Poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.logo1 {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoAwal {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+.menuAwal {
+  width: 50%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+}
+.menuLatihan,
+.menuKumpulan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.menuLatihan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuKumpulan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuLatihan {
+  margin-right: 20px;
+}
+
+.btnAwal {
+  width: 25%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btnMasuk {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+.btnMasuk:hover {
+  color: #9656a1;
+}
+.btnDaftar {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: #9656a1;
+  margin-left: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.btnDaftar:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: table-row;
+}
+.pertanyaan {
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.listPertanyaan {
+  width: 100%;
+  height: auto;
+  margin-left: 20%;
+  font-family: "Poppins";
+  color: black;
+}
+.pilgan {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0;
+}
+input[type="radio"] {
+  display: none;
+}
+label {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  border: 1px solid #9656a1;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  gap: 10px;
+}
+label:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 50%;
+}
+input[type="radio"]:checked + label:before {
+  background-color: #9656a1;
+}
+.btnPertanyaan {
+  width: 100%;
+  height: auto;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+.prev,
+.next {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: white;
+  background-color: #9656a1;
+  border: 1px solid #9656a1;
+  border-radius: 15px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.prev:hover,
+.next:hover {
+  background-color: transparent;
+  color: #9656a1;
+}
+.finish {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #9656a1;
+  border: 1px solid #9656a1;
+  border-radius: 15px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.finish:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.mapel {
+  width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.jenisMapel {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+.isiMapel {
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  font-family: "Sans serif";
+  color: black;
+  font-weight: 300;
+  margin-left: 5%;
+}
+.nmMapel {
+  font-family: "Poppins";
+  color: black;
+}
