@@ -11,13 +11,14 @@ require_once("functions.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 <body>
     <h1>Selamat datang, <?= $_SESSION["nama"]; ?></h1>
     <?php if ($_SESSION["role"] == "admin") : ?>
         <a href="admin.php">Admin</a>
     <?php endif; ?>
+    <a href="viewmapel.php">Latihan Soal</a>
     <a href="logout.php">Logout</a>
 </body>
 </html>
