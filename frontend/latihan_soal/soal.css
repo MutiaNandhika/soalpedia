@@ -93,54 +93,83 @@ body {
   flex-direction: table-row;
 }
 .pertanyaan {
-  width: 60%;
+  width: 50%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  margin-left: 5%;
+  margin-right: 0;
   display: flex;
   flex-direction: column;
 }
 .listPertanyaan {
   width: 100%;
   height: auto;
-  margin-left: 20%;
+  margin-left: auto;
   font-family: "Poppins";
   color: black;
+}
+.listPertanyaan h4 {
+  margin: auto;
+  color: #e78fb3;
+}
+.soal {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.soal a {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+.editSoal img {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  background-color: #e8da5d;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.editSoal img:hover {
+  background-color: #e78fb3;
 }
 .pilgan {
   font-size: 18px;
   font-weight: 300;
-  margin-top: 0;
+  margin: auto;
 }
-input[type="radio"] {
+.pilgan input[type="radio"] {
   display: none;
 }
-label {
+.pilgan label {
   position: relative;
   display: inline-flex;
   cursor: pointer;
   border: 1px solid #9656a1;
   align-items: center;
-  width: 50%;
+  min-width: 90%;
+  margin-left: 2%;
   margin-bottom: 10px;
   padding: 8px 15px;
   border-radius: 10px;
   gap: 10px;
 }
-label:before {
+.pilgan label:before {
   content: "";
   width: 20px;
   height: 20px;
   border: 1px solid #9656a1;
   border-radius: 50%;
 }
-input[type="radio"]:checked + label:before {
+.pilgan input[type="radio"]:checked + label:before {
   background-color: #9656a1;
 }
 .btnPertanyaan {
   width: 100%;
   height: auto;
-  margin-left: 20%;
+  margin: auto;
   margin-top: 20px;
 }
 .prev,
@@ -177,32 +206,128 @@ input[type="radio"]:checked + label:before {
   color: white;
 }
 
-.mapel {
-  width: 40%;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
   height: auto;
-  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+.dropdown span img{
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 2px solid #B20040;
+  border-radius: 15px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown-content p{
+  font-family: 'PT Sans';
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+  margin: auto;
+}
+.dropdown-content input{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content label{
+  font-family: 'PT Sans';
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.kirim{
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: black;
+  background-color: transparent;
+  border: 1px solid #B20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.batal{
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: white;
+  background-color: #B20040;
+  border: 1px solid #B20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+
+.mapel {
+  min-width: 40%;
+  height: auto;
+  margin-left: 0;
   margin-right: auto;
   display: flex;
   flex-direction: column;
 }
 .jenisMapel {
-  width: 100%;
+  min-width: 70%;
   height: auto;
   display: flex;
   flex-direction: row;
-  margin-left: auto;
+  margin-left: 50px;
   margin-right: auto;
+  border: 2px solid #9656a1;
+  border-radius: 5px;
+}
+.jenisMapel img{
+  width: auto;
+  height: auto;
+  margin: auto;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 .isiMapel {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   font-size: 14px;
   font-family: "Sans serif";
   color: black;
   font-weight: 300;
-  margin-left: 5%;
 }
 .nmMapel {
   font-family: "Poppins";
   color: black;
+}
+.nomorSoal {
+  max-width: 100%;
+  height: auto;
+  background-color: aquamarine;
+}
+.nomorSoal table{
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 90%;
+  height: 100%;
 }

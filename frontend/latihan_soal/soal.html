@@ -22,7 +22,9 @@
       </div>
       <div class="menuAwal">
         <a class="menuLatihan" href="draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html">Kumpulan Soal</a>
+        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html"
+          >Kumpulan Soal</a
+        >
       </div>
       <div class="btnAwal">
         <a class="btnMasuk" href="../logres.html">Masuk</a>
@@ -33,8 +35,16 @@
     <div class="main">
       <div class="pertanyaan">
         <div class="listPertanyaan">
-          <h3>Pertanyaan</h3>
+          <h4>Letak Indonesia</h4>
+
           <form class="pilgan" action="" method="post">
+            <div class="soal">
+              <a href="">Pertanyaan</a>
+              <a class="editSoal" href=""
+                ><img src="../icon/edit.svg" alt=""
+              /></a>
+            </div>
+
             <p>Siapa presiden Indonesia saat ini?</p>
 
             <input class="jawaban" type="radio" name="jawaban" id="jawaban1" />
@@ -57,22 +67,91 @@
         </div>
       </div>
 
+      <div class="dropdown">
+        <img src="../icon/info.svg" alt="" />
+        <div class="dropdown-content">
+          <p>Laporkan Soal</p>
+          <input
+            type="radio"
+            name="laporan"
+            id="menyimpang"
+            value="Soal Menyimpang"
+          />
+          <label for="menyimpang">Soal Menyimpang</label><br />
+
+          <input
+            type="radio"
+            name="laporan"
+            id="teknis"
+            value="Kesalahan Teknis"
+          />
+          <label for="teknis">Kesalahan Teknis</label><br />
+
+          <input
+            type="radio"
+            name="laporan"
+            id="instruksi"
+            value="Ketidakjelasan Instruksi"
+          />
+          <label for="instruksi">Ketidakjelasan Instruksi</label><br />
+
+          <input
+            type="radio"
+            name="laporan"
+            id="konten"
+            value="Konten Tidak Pantas"
+          />
+          <label for="konten">Konten Tidak Pantas</label><br />
+
+          <input
+            type="radio"
+            name="laporan"
+            id="perbaikan"
+            value="Usulan Perbaikan"
+          />
+          <label for="perbaikan">Usulan Perbaikan</label><br /><br />
+
+          <button class="kirim" type="submit">Kirim</button>
+          <button class="batal" type="button">Batal</button>
+        </div>
+      </div>
+
       <div class="mapel">
         <div class="jenisMapel">
-          <div>
-            <img
-              class="gambarMapel"
-              src="../gambar/matematika.svg"
-              alt="Math"
-            />
-          </div>
+          <img src="../gambar/matematika.svg" alt="Math" />
+
           <div class="isiMapel">
-            <h3 class="nmMapel">Matematika</h3>
+            <h3 class="nmMapel">Pendidikan Pancasila</h3>
             <p>Pertanyaan <br />15/25</p>
             <p>Time Remaining <br />00:09:13 left</p>
           </div>
         </div>
-        <div class="nomorSoal"></div>
+
+        <div class="nomorSoal">
+          <table border="1">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </body>
