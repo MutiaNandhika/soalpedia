@@ -106,6 +106,8 @@ body {
   flex-direction: row;
   justify-content: space-around;
   flex-flow: wrap;
+  margin: auto;
+  margin-bottom: 50px;
 }
 .materi {
   width: 300px;
@@ -122,6 +124,9 @@ body {
   height: auto;
   margin: 0 auto;
   border-radius: 20px 20px 0 0;
+}
+.mapel{
+  margin: auto;
 }
 .namaMateri {
   font-family: "Poppins";

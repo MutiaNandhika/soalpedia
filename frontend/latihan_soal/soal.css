@@ -30,7 +30,14 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan,
+.menuLatihan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid #e78fb3;
+}
 .menuKumpulan {
   font-family: "Poppins";
   font-size: 20px;
@@ -40,13 +47,11 @@ body {
   border: none;
 }
 .menuLatihan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuKumpulan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuLatihan {
@@ -82,6 +87,28 @@ body {
 .btnDaftar:hover {
   background-color: #9656a1;
   color: white;
+}
+
+.heading {
+  margin-left: 6%;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.heading a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.heading img {
+  width: 25px;
+  height: 25px;
 }
 
 .main {
@@ -166,30 +193,75 @@ body {
 .pilgan input[type="radio"]:checked + label:before {
   background-color: #9656a1;
 }
-.btnPertanyaan {
+
+.pagination {
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 10px 30px;
+  border-radius: 6px;
+  background-color: transparent;
   width: 100%;
   height: auto;
-  margin: auto;
-  margin-top: 20px;
 }
-.prev,
-.next {
-  font-size: 12px;
-  font-family: "Poppins";
-  font-weight: 600;
-  color: white;
-  background-color: #9656a1;
-  border: 1px solid #9656a1;
-  border-radius: 15px;
-  padding: 4px 15px;
+.pagination ul {
+  margin: 10px 0;
+}
+.pagination ul li {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
   cursor: pointer;
-  margin-right: 20px;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  background-position: 0 -45px;
+  transition: background-position 0.3s;
 }
-.prev:hover,
-.next:hover {
-  background-color: transparent;
+.pagination ul li.active {
+  color: white;
+  background-image: linear-gradient(#9656a1, #9656a1);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.btn1 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins";
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  margin-right: 0;
+}
+.btn2 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins";
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.btn1:hover,
+.btn2:hover {
   color: #9656a1;
 }
+
 .finish {
   font-size: 12px;
   font-family: "Poppins";
@@ -217,7 +289,7 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
-.dropdown span img{
+.dropdown span img {
   width: 18px;
   height: 18px;
   margin-right: 5px;
@@ -226,29 +298,29 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  border: 2px solid #B20040;
+  border: 2px solid #b20040;
   border-radius: 15px;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
-.dropdown-content p{
-  font-family: 'PT Sans';
+.dropdown-content p {
+  font-family: "PT Sans";
   font-size: 18px;
   font-weight: 700;
   color: black;
   margin: auto;
 }
-.dropdown-content input{
+.dropdown-content input {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
 }
-.dropdown-content label{
-  font-family: 'PT Sans';
+.dropdown-content label {
+  font-family: "PT Sans";
   font-size: 16px;
   font-weight: 500;
   color: black;
@@ -257,31 +329,38 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.kirim{
+.kirim {
   font-size: 12px;
   font-family: "Poppins";
   font-weight: 600;
   color: black;
   background-color: transparent;
-  border: 1px solid #B20040;
+  border: 1px solid #b20040;
   border-radius: 8px;
   padding: 4px 15px;
   cursor: pointer;
   margin-left: 5px;
 }
-.batal{
+.kirim:hover {
+  background-color: #b20040;
+  color: white;
+}
+.batal {
   font-size: 12px;
   font-family: "Poppins";
   font-weight: 600;
   color: white;
-  background-color: #B20040;
-  border: 1px solid #B20040;
+  background-color: #b20040;
+  border: 1px solid #b20040;
   border-radius: 8px;
   padding: 4px 15px;
   cursor: pointer;
   margin-left: 10px;
 }
-
+.batal:hover {
+  background-color: transparent;
+  color: #b20040;
+}
 
 .mapel {
   min-width: 40%;
@@ -292,7 +371,7 @@ body {
   flex-direction: column;
 }
 .jenisMapel {
-  min-width: 70%;
+  width: 70%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -301,12 +380,14 @@ body {
   border: 2px solid #9656a1;
   border-radius: 5px;
 }
-.jenisMapel img{
-  width: auto;
+.gambar-mapel {
+  width: 50%;
   height: auto;
   margin: auto;
-  margin-left: 5px;
-  margin-right: 10px;
+}
+.gambar-mapel img {
+  width: 100%;
+  height: auto;
 }
 .isiMapel {
   max-width: 100%;
@@ -315,19 +396,97 @@ body {
   font-family: "Sans serif";
   color: black;
   font-weight: 300;
+  margin-right: 10px;
 }
 .nmMapel {
   font-family: "Poppins";
   color: black;
 }
-.nomorSoal {
-  max-width: 100%;
+.komentar {
+  width: auto;
   height: auto;
-  background-color: aquamarine;
+  margin-left: 10%;
+  margin-right: auto;
+  margin-top: 20px;
 }
-.nomorSoal table{
-  margin-left: 50px;
+.komentar table {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: grey;
+}
+.komen-list {
+  width: 100%;
+  height: auto;
+}
+.komen-list label {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 600;
+}
+.komen-list input {
+  min-width: 350px;
+  height: 30px;
+  border: 1px solid #9656a1;
+  border-radius: 8px;
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  margin-left: 8px;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.komen-list input:focus {
+  outline: none;
+}
+.submit {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.submit input {
+  min-width: 90%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 500;
+  color: grey;
+}
+.submit input:focus {
+  outline: none;
+  color: black;
+}
+.submit button {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  margin-right: auto;
+}
+.submit button img {
+  width: 25px;
+  height: 25px;
+}
+
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
   margin-top: 10px;
-  width: 90%;
-  height: 100%;
+  background-color: #9656a1;
+  justify-content: center;
+}
+.copyRight {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 6px 20px;
 }

@@ -1,0 +1,158 @@
+* {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif, "Poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.logo1 {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoAwal {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+.menuAwal {
+  width: 50%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+}
+.menuLatihan,
+.menuKumpulan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.menuLatihan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuKumpulan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuLatihan {
+  margin-right: 20px;
+}
+
+.btnAwal {
+  width: 25%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btnMasuk {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+.btnMasuk:hover {
+  color: #9656a1;
+}
+.btnDaftar {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: #9656a1;
+  margin-left: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.btnDaftar:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.heading {
+  margin-left: 6%;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.heading a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.heading img {
+  width: 25px;
+  height: 25px;
+}
+
+.download {
+  width: 90%;
+  height: auto;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins";
+  color: black;
+}
+.download table {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-top: 10px;
+}
+.download table tr {
+  border-bottom: 1px solid grey;
+}
+.trash img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background-color: #b20040;
+  padding: 3px;
+  border-radius: 5px;
+}
+.trash img:hover {
+  background-color: #e78fb3;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #9656a1;
+  justify-content: center;
+}
+.copyRight {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin: 6px 20px;
+}

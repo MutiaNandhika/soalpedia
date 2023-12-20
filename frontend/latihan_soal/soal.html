@@ -21,16 +21,19 @@
         <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
       </div>
       <div class="menuAwal">
-        <a class="menuLatihan" href="draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html"
-          >Kumpulan Soal</a
-        >
+        <a class="menuLatihan" href="draft_quiz.html"></a>
+        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html"></a>
       </div>
       <div class="btnAwal">
-        <a class="btnMasuk" href="../logres.html">Masuk</a>
+        <a class="btnMasuk" href="">Halo, Nandhi</a>
         <a class="btnDaftar" href="../logres.html">Daftar</a>
       </div>
     </nav>
+
+    <div class="heading">
+      <a href="draft_quiz.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="draft_quiz.html">Back</a>
+    </div>
 
     <div class="main">
       <div class="pertanyaan">
@@ -40,9 +43,7 @@
           <form class="pilgan" action="" method="post">
             <div class="soal">
               <a href="">Pertanyaan</a>
-              <a class="editSoal" href=""
-                ><img src="../icon/edit.svg" alt=""
-              /></a>
+              <a class="editSoal" href="form-kuis.html"><img src="../icon/edit.svg" alt=""/></a>
             </div>
 
             <p>Siapa presiden Indonesia saat ini?</p>
@@ -60,10 +61,18 @@
             <label for="jawaban4">Sesa</label>
           </form>
         </div>
-        <div class="btnPertanyaan">
-          <a class="prev" href="">Previous Question</a>
-          <a class="next" href="">Next Question</a>
-          <a class="finish" href="">Finish</a>
+
+        <div class="pagination">
+          <button class="btn1" onclick="backBtn()"> < previous</button>
+          <ul>
+            <li class="link active" value="1" onclick="activeLink()">1</li>
+            <li class="link" value="2" onclick="activeLink()">2</li>
+            <li class="link" value="3" onclick="activeLink()">3</li>
+            <li class="link" value="4" onclick="activeLink()">4</li>
+            <li class="link" value="5" onclick="activeLink()">5</li>
+            <li class="link" value="6" onclick="activeLink()">6</li>
+          </ul>
+          <button class="btn2" onclick="nextBtn()">&nbsp;&nbsp; next ></button>
         </div>
       </div>
 
@@ -118,7 +127,9 @@
 
       <div class="mapel">
         <div class="jenisMapel">
-          <img src="../gambar/matematika.svg" alt="Math" />
+          <div class="gambar-mapel">
+            <img src="../gambar/pancasila.svg" alt="Math" />
+          </div>
 
           <div class="isiMapel">
             <h3 class="nmMapel">Pendidikan Pancasila</h3>
@@ -127,32 +138,63 @@
           </div>
         </div>
 
-        <div class="nomorSoal">
-          <table border="1">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+        <div class="komentar">
+          <table border="1" cellpadding="10" cellspacing="0">
+              <tr>
+                  <td colspan="2"><b>Komentar</b></td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="komen-list">
+                      <label for="nama">Nandhi</label><br>
+                      <input type="text" name="nama" id="nama" value="Pada soal nomer 1 terdapat salah ketik">
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="submit">
+                      <label for="submit"></label>
+                      <input type="text" placeholder="Kirim Komentar...">
+
+                      <button><img src="../icon/submit.svg" alt=""></button>
+                  </td>
+              </tr>
           </table>
         </div>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="copyRight">&copy; 2023, SoalPedia</p>
+    </footer>
+
+    <script>
+      let link = document.getElementsByClassName("link");
+      let currentValue = 1;
+
+      function activeLink() {
+        for (let i = 0; i < link.length; i++) {
+          link[i].addEventListener("click", function () {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            currentValue = this.value;
+          });
+        }
+      }
+
+      function backBtn() {
+        if (currentValue > 1) {
+          currentValue--;
+          link[currentValue - 1].click();
+        }
+      }
+
+      function nextBtn() {
+        if (currentValue < link.length) {
+          currentValue++;
+          link[currentValue - 1].click();
+        }
+      }
+    </script>
   </body>
 </html>
