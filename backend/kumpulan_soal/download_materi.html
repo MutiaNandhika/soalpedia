@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Materi</title>
+
+    <link rel="stylesheet" href="downloadMateri.css" />
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <nav class="header">
+      <div class="logo1">
+        <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
+      </div>
+      <div class="menuAwal">
+        <!-- Menu Latihan dan Kumpulan -->
+        <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
+        <a class="menuKumpulan" href="draft_materi.html">Kumpulan Soal</a>
+      </div>
+      <div class="btnAwal">
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+      </div>
+    </nav>
+
+    <div class="heading">
+      <a href="draft_materi.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="draft_materi.html">Back</a>
+    </div>
+
+    <center>
+      <div class="main">
+        <!-- Nama Mapel -->
+          <div class="namaMapel">
+              <p>Geografi</p>
+          </div>
+  
+        <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
+        <div class="dropdown">
+          <button>Pilih Kelas</button>
+          <div class="dropdown-content">
+            <a href="#">Kelas 12</a>
+            <a href="#">Kelas 11</a>
+            <a href="#">Kelas 10</a>
+          </div>
+        </div>
+  
+        <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+        <div class="tambahSoal">
+          <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="">Tambah Soal</a>
+        </div>
+  
+        <!-- Searching -->
+          <div class="search">
+              <label for="search"></label>
+              <input type="text" name="search" placeholder="Cari...">
+          </div>
+      </div>
+
+      <div class="download">
+        <!-- TABEL Materi -->
+        <table border="0" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Nama</th>
+                <th>Pemilik</th>
+                <th>Tipe File</th>
+                <th>Terakhir Diubah</th>
+                <th>Ukuran File</th>
+                <th>Aksi</th>
+            </tr>
+            <tr>
+                <td>Soal Indonesia Maritim</td>
+                <td>Muthia Nandhika</td>
+                <td>PDF</td>
+                <td>10 November 2023</td>
+                <td>1,8 MB</td>
+                <td>
+                  <!-- Tombol Edit, Hapus, Unduh bisa buat user Guru,Admin -->
+                  <a class="edit" href=""><img src="../icon/edit.svg" alt=""></a>
+                  <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+                  <!-- Tombol Unduh hanya bisa buat user Siswa -->
+                  <a class="unduh" href=""><img src="../icon/unduh.svg" alt=""></a>
+
+                  <!-- Tombol Kritik & Saran buat user Editor -->
+                  <div class="kritik-saran">
+                    <a class="add-kritik" href=""><img src="../icon/add.svg" alt="" /></a>
+                    <a class="krisan" href="">Kritik & Saran</a>
+                  </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+    </center>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="copyRight">&copy; 2023, SoalPedia</p>
+    </footer>
+  </body>
+</html>

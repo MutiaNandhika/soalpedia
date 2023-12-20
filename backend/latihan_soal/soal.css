@@ -1,0 +1,333 @@
+* {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif, "Poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.logo1 {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logoAwal {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+.menuAwal {
+  width: 50%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+}
+.menuLatihan,
+.menuKumpulan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border: none;
+}
+.menuLatihan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuKumpulan:hover {
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
+  transition: 0.5s;
+}
+.menuLatihan {
+  margin-right: 20px;
+}
+
+.btnAwal {
+  width: 25%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btnMasuk {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+.btnMasuk:hover {
+  color: #9656a1;
+}
+.btnDaftar {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: #9656a1;
+  margin-left: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.btnDaftar:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: table-row;
+}
+.pertanyaan {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  margin-left: 5%;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.listPertanyaan {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  font-family: "Poppins";
+  color: black;
+}
+.listPertanyaan h4 {
+  margin: auto;
+  color: #e78fb3;
+}
+.soal {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.soal a {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+.editSoal img {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  background-color: #e8da5d;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.editSoal img:hover {
+  background-color: #e78fb3;
+}
+.pilgan {
+  font-size: 18px;
+  font-weight: 300;
+  margin: auto;
+}
+.pilgan input[type="radio"] {
+  display: none;
+}
+.pilgan label {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  border: 1px solid #9656a1;
+  align-items: center;
+  min-width: 90%;
+  margin-left: 2%;
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.pilgan label:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9656a1;
+  border-radius: 50%;
+}
+.pilgan input[type="radio"]:checked + label:before {
+  background-color: #9656a1;
+}
+.btnPertanyaan {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+}
+.prev,
+.next {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: white;
+  background-color: #9656a1;
+  border: 1px solid #9656a1;
+  border-radius: 15px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.prev:hover,
+.next:hover {
+  background-color: transparent;
+  color: #9656a1;
+}
+.finish {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #9656a1;
+  border: 1px solid #9656a1;
+  border-radius: 15px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.finish:hover {
+  background-color: #9656a1;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+.dropdown span img{
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 2px solid #B20040;
+  border-radius: 15px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown-content p{
+  font-family: 'PT Sans';
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+  margin: auto;
+}
+.dropdown-content input{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content label{
+  font-family: 'PT Sans';
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.kirim{
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: black;
+  background-color: transparent;
+  border: 1px solid #B20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.batal{
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: white;
+  background-color: #B20040;
+  border: 1px solid #B20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+
+.mapel {
+  min-width: 40%;
+  height: auto;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.jenisMapel {
+  min-width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  margin-right: auto;
+  border: 2px solid #9656a1;
+  border-radius: 5px;
+}
+.jenisMapel img{
+  width: auto;
+  height: auto;
+  margin: auto;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.isiMapel {
+  max-width: 100%;
+  height: auto;
+  font-size: 14px;
+  font-family: "Sans serif";
+  color: black;
+  font-weight: 300;
+}
+.nmMapel {
+  font-family: "Poppins";
+  color: black;
+}
+.nomorSoal {
+  max-width: 100%;
+  height: auto;
+  background-color: aquamarine;
+}
+.nomorSoal table{
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 90%;
+  height: 100%;
+}
