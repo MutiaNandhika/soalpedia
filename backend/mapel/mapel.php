@@ -56,8 +56,8 @@
       <?php
         while($row = mysqli_fetch_assoc($result)){
             echo "<div class='materi'>";
-            echo "<div><a href='../latihan_soal/draft_quiz.html'><img class='gambarMateri' src='../gambar/".$row['img']."' alt='' /></a></div>";
-            echo "<div><a class='namaMateri' href='../latihan_soal/draft_quiz.html'>".$row['pelajaran']."</a></div>";
+            echo "<div><a href='../kumpulan_soal/draft_materi.php?id=".$row['id']."'><img class='gambarMateri' src='../gambar/".$row['img']."' alt='' /></a></div>";
+            echo "<div><a class='namaMateri' href='../kumpulan_soal/draft_materi.php?id=".$row['id']."'>".$row['pelajaran']."</a></div>";
             echo "</div>";
         }
       ?>

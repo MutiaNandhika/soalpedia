@@ -1,3 +1,19 @@
+<?php
+  require_once "../config.php";
+  session_start();
+  if(!isset($_SESSION['login'])){
+    header("Location: ../logres.php");
+  }
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+    $kategori = mysqli_query($mysqli, $query);
+  } else {
+    $query = "SELECT * FROM kategori";
+    $kategori = mysqli_query($mysqli, $query);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,24 +40,34 @@
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
         <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="draft_materi.html">Kumpulan Soal</a>
+        <a class="menuKumpulan" href="draft_materi.php?id=<?php echo $id ?>">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
-        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
     </nav>
 
     <div class="heading">
-      <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
-      <a href="../mapel/mapel.html">Back</a>
+      <a href="../mapel/mapel.php"><img src="../icon/back.svg" alt=""></a>
+      <a href="../mapel/mapel.php">Back</a>
     </div>
 
     <center>
       <div class="main">
         <!-- Nama Mapel -->
           <div class="namaMapel">
-              <p>Geografi</p>
+            <?php if(isset($_GET['id'])) : ?>
+              <?php
+                $id = $_GET['id'];
+                $query = "SELECT * FROM mapel WHERE id = $id";
+                $result = mysqli_query($mysqli, $query);
+                $row = mysqli_fetch_assoc($result);
+              ?>
+              <p><?php echo $row['pelajaran'] ?></p>
+            <?php else : ?>
+              <p>Semua Materi</p>
+            <?php endif ?>
           </div>
   
         <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
@@ -55,10 +81,12 @@
         </div>
   
         <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+        <?php if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
         <div class="tambahSoal">
           <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
           <a class="tambah" href="">Tambah Soal</a>
         </div>
+        <?php endif ?>
   
         <!-- Searching -->
           <div class="search">
@@ -67,23 +95,40 @@
           </div>
       </div>
       </center>
-
-    <div class="draft">
+      <?php 
+        while($row = mysqli_fetch_assoc($kategori)){
+          echo "<div class='draft'>";
+          echo "<div class='draftMapel'>";
+          echo "<div class='listMapel'>";
+          echo "<img src='../gambar/materi.svg' alt=''>";
+          echo "<a class='mapel-1' href='download_materi.php?id=".$row['id']."'>".$row['kategori']."</a>";
+          echo "</div>";
+          if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'editor'){
+            echo "<div class='icon'>";
+            echo "<a class='edit' href=''><img src='../icon/edit.svg' alt=''></a>";
+            echo "<a class='trash' href=''><img src='../icon/trash.svg' alt=''></a>";
+            echo "</div>";
+          }
+          echo "</div>";
+          echo "</div>";
+        }
+      ?>
+    <!-- <div class="draft">
         <div class="draftMapel">
-            <!-- List Materi -->
+            List Materi
             <div class="listMapel">
               <img src="../gambar/materi.svg" alt="">
               <a class="mapel-1" href="download_materi.html">Kumpulan Soal UTS Semester 1</a>
             </div>
 
-            <!-- Tombol -->
+            Tombol
             <div class="icon">
-              <!-- Tombol Edit dan Hapus buat User Guru,Admin -->
+              Tombol Edit dan Hapus buat User Guru,Admin
               <a class="edit" href=""><img src="../icon/edit.svg" alt=""></a>
               <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- FOOTER -->
     <footer>

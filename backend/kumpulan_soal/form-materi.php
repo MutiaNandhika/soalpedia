@@ -1,3 +1,14 @@
+<?php
+    include "../config.php";
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: ../logres.php");
+    }
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +47,7 @@
 
     <div class="main">
         <span>Tambah File Materi</span>
-        <form action="" method="post">
+        <form action="proses_file.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>Judul Materi</td>
@@ -62,7 +73,7 @@
 
                 <tr>
                     <td></td>
-                    <td></td>
+                    <td><input type="hidden" name="id" value = <?php echo $id ?>></td>
                     <td>
                         <label for="cancel"></label>
                         <input class="cancel" type="submit" name="cancel" value="Cancel">

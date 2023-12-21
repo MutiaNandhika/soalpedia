@@ -11,6 +11,7 @@
     if($row){
         if(password_verify($password, $row['password'])){
             $_SESSION['login'] = true;
+            $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['role'];
             echo "<script>alert('Berhasil masuk!');window.location.href='mapel/mapel.php';</script>";
