@@ -31,7 +31,14 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan,
+.menuLatihan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid #e78fb3;
+}
 .menuKumpulan {
   font-family: "Poppins";
   font-size: 20px;
@@ -41,13 +48,11 @@ body {
   border: none;
 }
 .menuLatihan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuKumpulan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuLatihan {
@@ -107,87 +112,126 @@ body {
   height: 25px;
 }
 
-.main{
-    width: 90%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+.main {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.main h3{
-    font-family: "Poppins";
-    color: black;
-    margin-left: 0px;
-    margin-right: auto;
+.main h3 {
+  font-family: "Poppins";
+  color: black;
+  margin-left: 0px;
+  margin-right: auto;
 }
-.tabel-main{
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+.tabel-main {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-.tabel-main table{
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-color: grey;
+.tabel-main table {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: grey;
 }
-.komen-list{
-    width: 100%;
-    height: auto;
+.komen-list {
+  width: 80%;
+  height: auto;
 }
-.komen-list label{
-    font-family: 'Poppins';
-    font-size: 12px;
-    font-weight: 600;
+.komen-list span {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
 }
-.komen-list input{
-    min-width: 400px;
-    height: 30px;
-    border: 1px solid #9656a1;
-    border-radius: 8px;
-    font-family: 'PT Sans';
-    font-size: 15px;
-    font-weight: 400;
-    color: black;
-    margin-left: 8px;
-    margin-right: auto;
-    margin-top: 5px;
+.komen {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
-.komen-list input:focus{
-    outline: none;
+.isi-komen {
+  width: auto;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: auto 0;
+  margin-left: 20px;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
-.submit{
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
+.isi-komen p {
+  width: auto;
+  height: auto;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  margin: auto;
+  margin-left: 10px;
 }
-.submit input{
-    min-width: 90%;
-    height: auto;
-    background-color: transparent;
-    border: none;
-    font-family: 'PT Sans';
-    font-size: 15px;
-    font-weight: 500;
-    color: grey;
+.isi-komen p .edit-komen {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  margin: auto;
+  margin-left: 20px;
+  cursor: pointer;
 }
-.submit input:focus{
-    outline: none;
-    color: black;
+.isi-komen p .edit-komen img {
+  width: 25px;
+  height: 25px;
 }
-.submit button{
-    width: auto;
-    height: auto;
-    background-color: transparent;
-    border: none;
-    margin-left: 5%;
-    margin-right: auto;
+.isi-komen p button {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  margin: auto;
+  margin-left: 5px;
+  cursor: pointer;
 }
-.submit button img{
-    width: 25px;
-    height: 25px;
+.isi-komen p button img {
+  width: 25px;
+  height: 25px;
+}
+
+.submit {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.submit input {
+  min-width: 90%;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  font-family: "PT Sans";
+  font-size: 15px;
+  font-weight: 500;
+  color: grey;
+}
+.submit input:focus {
+  outline: none;
+  color: black;
+}
+.submit button {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  margin-left: 5%;
+  margin-right: auto;
+}
+.submit button img {
+  width: 25px;
+  height: 25px;
 }
 
 footer {
