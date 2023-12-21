@@ -69,7 +69,6 @@ body {
   margin-left: 30%;
 }
 
-
 .heading {
   margin-left: 4%;
   margin-right: auto;
@@ -123,34 +122,20 @@ table tr td {
   width: 240px;
   height: 30px;
 }
-.judul::placeholder,
-.pertanyaan::placeholder {
+.judul::placeholder {
   font-family: "Poppins";
   font-size: 12px;
   font-weight: 400;
   color: grey;
 }
-.pertanyaan {
+.file {
   font-family: "Poppins";
   font-size: 16px;
   font-weight: 400;
   color: black;
-  border: 1px solid black;
-  border-radius: 7px;
   width: 240px;
-}
-.kesulitan {
-  border: 1px solid black;
-  border-radius: 7px;
-  width: 245px;
-  height: 30px;
+  height: auto;
   cursor: pointer;
-}
-.kesulitan option {
-  font-family: "Poppins";
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
 }
 .cancel {
   font-family: "Poppins";

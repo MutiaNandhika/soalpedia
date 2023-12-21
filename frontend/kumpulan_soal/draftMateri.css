@@ -31,14 +31,14 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan{
+.menuLatihan {
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
   color: black;
   text-align: center;
 }
-.menuKumpulan{
+.menuKumpulan {
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
@@ -93,13 +93,21 @@ body {
 .heading {
   margin-left: 6%;
   margin-right: auto;
-  width: 30%;
+  width: auto;
   height: auto;
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 }
-.heading a{
+.back {
+  width: auto;
+  height: auto;
+  margin: auto 0;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.back a {
   font-family: "Poppins";
   font-size: 15px;
   font-weight: 400;
@@ -107,9 +115,93 @@ body {
   text-align: center;
   border: none;
 }
-.heading img{
+.back img {
   width: 25px;
   height: 25px;
+}
+.kritik-saran {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  background-color: #b20040;
+  border-radius: 5px;
+  padding: 0 6px;
+  justify-content: space-between;
+  margin: auto 0;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+.kritik-saran:hover {
+  background-color: #e78fb3;
+}
+.tambah img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 5px;
+}
+.krisan {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  margin: auto 0;
+}
+.lihat-laporan {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin: auto 0;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+.lihat-laporan a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  border: none;
+  background-color: #b20040;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  padding: 3px 10px;
+}
+.lihat-laporan a:hover {
+  background-color: #e78fb3;
+}
+.lihat-krisan {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  background-color: #b20040;
+  border-radius: 5px;
+  padding: 0 6px;
+  justify-content: space-between;
+  margin: auto 0;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+.lihat-krisan:hover {
+  background-color: #e78fb3;
+}
+.info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 5px;
+}
+.lihat {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  margin: auto 0;
 }
 
 .main {
@@ -214,7 +306,7 @@ body {
   color: white;
 }
 
-.kesulitan{
+.kesulitan {
   display: flex;
   flex-direction: row;
   width: 10%;
@@ -222,7 +314,7 @@ body {
   margin-left: auto;
   margin-right: 20px;
 }
-.level{
+.level {
   font-family: "Poppins";
   font-size: 15px;
   font-weight: 400;
@@ -233,7 +325,7 @@ body {
   outline: none;
   cursor: pointer;
 }
-.level option{
+.level option {
   font-family: "Poppins";
   font-size: 15px;
   font-weight: 400;
@@ -286,7 +378,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.listMapel{
+.listMapel {
   display: flex;
   flex-direction: row;
   width: 85%;

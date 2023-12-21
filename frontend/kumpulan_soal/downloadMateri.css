@@ -199,6 +199,7 @@ body {
   min-width: 100px;
   margin-left: 20px;
   border-radius: 5px;
+  z-index: 1;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -320,34 +321,95 @@ body {
 .unduh img:hover {
   background-color: #e78fb3;
 }
-.kritik-saran {
+
+.judul-materi{
   display: flex;
   flex-direction: row;
-  width: 110px;
-  height: auto;
-  background-color: #9656a1;
-  border-radius: 10px;
-  padding: 0 6px;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
-.kritik-saran:hover {
-  background-color: #e78fb3;
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  text-align: left;
 }
-.add-kritik img {
-  width: 22px;
-  height: 22px;
+.dropdown1 span img {
+  width: 18px;
+  height: 18px;
   margin-right: 5px;
-  margin-left: auto;
-  margin-top: 5px;
 }
-.krisan {
-  font-family: "Poppins";
+.dropdown1 .dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 2px solid #b20040;
+  border-radius: 15px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown-content1 p {
+  font-family: "PT Sans";
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+  margin: auto;
+}
+.dropdown-content1 input {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content1 label {
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+}
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+.kirim {
   font-size: 12px;
-  font-weight: 400;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: black;
+  background-color: transparent;
+  border: 1px solid #b20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.kirim:hover {
+  background-color: #b20040;
   color: white;
-  margin-top: 7px;
+}
+.batal {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: white;
+  background-color: #b20040;
+  border: 1px solid #b20040;
+  border-radius: 8px;
+  padding: 4px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.batal:hover {
+  background-color: transparent;
+  color: #b20040;
 }
 
 footer {

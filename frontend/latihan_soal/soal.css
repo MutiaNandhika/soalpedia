@@ -402,86 +402,35 @@ body {
   font-family: "Poppins";
   color: black;
 }
-.komentar {
+.selesai{
   width: auto;
   height: auto;
-  margin-left: 10%;
-  margin-right: auto;
-  margin-top: 20px;
-}
-.komentar table {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: grey;
-}
-.komen-list {
-  width: 100%;
-  height: auto;
-}
-.komen-list label {
-  font-family: "Poppins";
-  font-size: 12px;
-  font-weight: 600;
-}
-.komen-list input {
-  min-width: 350px;
-  height: 30px;
-  border: 1px solid #9656a1;
-  border-radius: 8px;
-  font-family: "PT Sans";
-  font-size: 15px;
-  font-weight: 500;
-  color: black;
-  margin-left: 8px;
-  margin-right: auto;
-  margin-top: 5px;
-}
-.komen-list input:focus {
-  outline: none;
-}
-.komen-list a{
-  font-family: "Poppins";
-  font-size: 15px;
-  font-weight: 600;
-  color: grey;
-}
-
-.submit {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-}
-.submit input {
-  min-width: 90%;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  font-family: "PT Sans";
-  font-size: 15px;
-  font-weight: 500;
-  color: grey;
-}
-.submit input:focus {
-  outline: none;
-  color: black;
-}
-.submit button {
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  margin-left: 5px;
-  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background-color: #9656a1;
+  border-radius: 10px;
   cursor: pointer;
+  justify-content: center;
+  text-align: center;
 }
-.submit button img {
-  width: 25px;
-  height: 25px;
+.selesai:hover{
+  background-color: white;
 }
-
+.selesai button{
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+.selesai button:hover{
+  color: #9656a1;
+}
 
 footer {
   width: 100%;

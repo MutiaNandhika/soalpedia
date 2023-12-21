@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Draft Latihan Soal</title>
+    <title>Latihan Soal</title>
 
     <link rel="stylesheet" href="draftQuiz.css" />
 
@@ -33,8 +33,27 @@
     </nav>
 
     <div class="heading">
-      <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
-      <a href="../mapel/mapel.html">Back</a>
+      <div class="back">
+        <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
+        <a href="../mapel/mapel.html">Back</a>
+      </div>
+
+      <!-- Tombol Kritik & Saran UNTUK SISWA, GURU -->
+      <div class="kritik-saran">
+        <a class="tambah" href="../kritik&saran/tambah_krisan.html"><img src="../icon/add.svg" alt="" /></a>
+        <a class="krisan" href="../kritik&saran/tambah_krisan.html">Kritik & Saran</a>
+      </div>
+
+      <!-- Lihat Laporan HANYA UNTUK EDITOR -->
+      <div class="lihat-laporan">
+        <a href="../laporan_soal/pelaporan-soal.html">Lihat Laporan</a>
+      </div>
+
+      <!-- Tombol Lihat Kritik & Saran HANYA UNTUK ADMIN -->
+      <div class="lihat-krisan">
+        <a class="info" href="../kritik&saran/kritik_saran.html"><img src="../icon/info2.svg" alt="" /></a>
+        <a class="lihat" href="../kritik&saran/kritik_saran.html">Lihat Kritik & Saran</a>
+      </div>
     </div>
 
     <center>
@@ -56,8 +75,8 @@
 
       <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
       <div class="tambahSoal">
-        <a class="add" href="form-kuis.html"><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="form-kuis.html">Tambah Soal</a>
+        <a class="add" href="tambah-soal.html"><img src="../icon/add.svg" alt=""></a>
+        <a class="tambah" href="tambah-soal.html">Tambah Soal</a>
       </div>
 
       <!-- Kesulitan -->
@@ -82,18 +101,39 @@
         <!-- List Soal Quiz -->
         <div class="listQuiz">
           <img src="../gambar/quiz.svg" alt="">
-          <a class="quiz-1" href="Soal.html">Luas dan batas wilayah Indonesia</a>
+          <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
         </div>
         
-        <!-- Tombol Edit dan Hapus buat User Guru,Admin -->
+        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
         <div class="icon">
-          <a class="edit" href=""><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+          <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
         </div>
       </div>
 
-      <!-- Lihat Laporan HANYA UNTUK EDITOR -->
-      <div class="lihat-laporan">
-        <a href="../laporan_soal/pelaporan.html">Lihat Laporan</a>
+      <div class="draftQuiz">
+        <!-- List Soal Quiz -->
+        <div class="listQuiz">
+          <img src="../gambar/quiz.svg" alt="">
+          <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
+        </div>
+        
+        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
+        <div class="icon">
+          <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+        </div>
+      </div>
+      
+      <div class="draftQuiz">
+        <!-- List Soal Quiz -->
+        <div class="listQuiz">
+          <img src="../gambar/quiz.svg" alt="">
+          <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
+        </div>
+        
+        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
+        <div class="icon">
+          <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+        </div>
       </div>
     </div>
 

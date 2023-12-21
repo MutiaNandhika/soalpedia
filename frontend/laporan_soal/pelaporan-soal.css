@@ -31,7 +31,7 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan {
+.menuLatihan{
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
@@ -39,7 +39,7 @@ body {
   text-align: center;
   border-bottom: 2px solid #e78fb3;
 }
-.menuKumpulan {
+.menuKumpulan{
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
@@ -113,123 +113,110 @@ body {
 }
 
 .main {
-  width: 90%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.main h3 {
-  font-family: "Poppins";
-  color: black;
-  margin-left: 0px;
-  margin-right: auto;
-}
-.tabel-main {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tabel-main table {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: grey;
-}
-.komen-list {
-  width: 80%;
-  height: auto;
-}
-.komen span {
-  font-family: "Poppins";
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-}
-.komen {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.isi-komen{
-  width: auto;
-  height: 50px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
-  border: 1px solid #9656a1;
+  width: 90%;
+  height: auto;
+  background-color: #eb5757;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: right;
   border-radius: 10px;
-  justify-content: center;
 }
-.isi-komen p {
-  width: auto;
-  height: auto;
-  font-family: "PT Sans";
+.perbaikan {
+  width: 50%;
+  margin-left: 20px;
+  margin-right: auto;
+  font-family: "Poppins";
+  color: white;
   font-size: 20px;
-  font-weight: 500;
-  color: black;
-  margin: auto;
-  margin-left: 10px;
-  margin-right: 15px;
-}
-.isi-komen button {
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  margin: auto;
-  margin-left: 5px;
-  cursor: pointer;
-}
-.isi-komen button img {
-  width: 25px;
-  height: 25px;
-}
-.isi-komen button:hover {
-  box-shadow: 0 0 10px #9656a1;
-  transition: 0.5s;
+  font-weight: 600;
+  text-align: left;
 }
 
-.submit {
-  width: auto;
+.draft {
+  width: 90%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.draftLatihan {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   height: auto;
+  border: 1px solid #9656a1;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
+.draftMapel {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.namaLatihan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.namaLatihan:hover {
+  color: #9656a1;
+  transition: 0.5s;
+}
+.draftLatihan img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+.icon {
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
   flex-direction: row;
 }
-.submit input {
-  min-width: 90%;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  font-family: "PT Sans";
-  font-size: 15px;
-  font-weight: 500;
-  color: grey;
-}
-.submit input:focus {
-  outline: none;
-  color: black;
-}
-.submit button {
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  margin-left: 5%;
-  margin-right: auto;
-  cursor: pointer;
-}
-.submit button img {
+.laporan img{
   width: 25px;
   height: 25px;
+  padding: 3px;
+  border-radius: 5px;
 }
-.submit button:hover {
-  box-shadow: 0 0 10px black;
-  transition: 0.5s;
+.laporan img:hover {
+  box-shadow: 0 0 10px #e78fb3;
+}
+.edit img {
+  width: 25px;
+  height: 25px;
+  background-color: #e8da5d;
+  padding: 3px;
+  border-radius: 5px;
+}
+.edit img:hover {
+  background-color: #e78fb3;
+}
+.hapus img{
+  width: 25px;
+  height: 25px;
+  background-color: #b20040;
+  padding: 3px;
+  border-radius: 5px;
+}
+.hapus img:hover {
+  background-color: #e78fb3;
 }
 
 footer {

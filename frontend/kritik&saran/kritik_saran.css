@@ -5,7 +5,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", sans-serif, "Poppins";
-  text-decoration: none;
 }
 
 .header {
@@ -31,14 +30,7 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan {
-  font-family: "Poppins";
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-  border-bottom: 2px solid #e78fb3;
-}
+.menuLatihan,
 .menuKumpulan {
   font-family: "Poppins";
   font-size: 20px;
@@ -48,11 +40,13 @@ body {
   border: none;
 }
 .menuLatihan:hover {
-  color: #e78fb3;
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
   transition: 0.5s;
 }
 .menuKumpulan:hover {
-  color: #e78fb3;
+  color: #9656a1;
+  border-bottom: 1px solid #9656a1;
   transition: 0.5s;
 }
 .menuLatihan {
@@ -113,123 +107,71 @@ body {
 }
 
 .main {
-  width: 90%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.main h3 {
-  font-family: "Poppins";
-  color: black;
-  margin-left: 0px;
-  margin-right: auto;
-}
-.tabel-main {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tabel-main table {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-color: grey;
-}
-.komen-list {
-  width: 80%;
-  height: auto;
-}
-.komen span {
-  font-family: "Poppins";
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-}
-.komen {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.isi-komen{
-  width: auto;
-  height: 50px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
-  border: 1px solid #9656a1;
+  width: 90%;
+  height: auto;
+  background-color: #eb5757;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: right;
   border-radius: 10px;
-  justify-content: center;
 }
-.isi-komen p {
-  width: auto;
-  height: auto;
-  font-family: "PT Sans";
+.perbaikan {
+  width: 50%;
+  margin-left: 20px;
+  margin-right: auto;
+  font-family: "Poppins";
+  color: white;
   font-size: 20px;
-  font-weight: 500;
-  color: black;
-  margin: auto;
-  margin-left: 10px;
-  margin-right: 15px;
-}
-.isi-komen button {
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  margin: auto;
-  margin-left: 5px;
-  cursor: pointer;
-}
-.isi-komen button img {
-  width: 25px;
-  height: 25px;
-}
-.isi-komen button:hover {
-  box-shadow: 0 0 10px #9656a1;
-  transition: 0.5s;
+  font-weight: 600;
+  text-align: left;
 }
 
-.submit {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-}
-.submit input {
-  min-width: 90%;
-  height: auto;
+.download {
+  width: 90%;
+  height: 100vh;
   background-color: transparent;
-  border: none;
-  font-family: "PT Sans";
-  font-size: 15px;
-  font-weight: 500;
-  color: grey;
-}
-.submit input:focus {
-  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins";
   color: black;
 }
-.submit button {
-  width: auto;
+.download table {
+  width: 100%;
   height: auto;
-  background-color: transparent;
-  border: none;
-  margin-left: 5%;
+  margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-top: 10px;
 }
-.submit button img {
+.download table tr {
+  border-bottom: 1px solid grey;
+}
+.tag-head{
+    text-align: center;
+    border: none;
+    background-color: #e78fb3;
+}
+.tag-head th{
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+.trash img {
   width: 25px;
   height: 25px;
+  margin-right: 5px;
+  background-color: #b20040;
+  padding: 3px;
+  border-radius: 5px;
 }
-.submit button:hover {
-  box-shadow: 0 0 10px black;
-  transition: 0.5s;
+.trash img:hover {
+  background-color: #e78fb3;
 }
 
 footer {

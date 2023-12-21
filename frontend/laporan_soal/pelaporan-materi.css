@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", sans-serif, "Poppins";
+  text-decoration: none;
 }
 
 .header {
@@ -30,7 +31,13 @@ body {
   justify-content: center;
   text-align: center;
 }
-.menuLatihan,
+.menuLatihan {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
 .menuKumpulan {
   font-family: "Poppins";
   font-size: 20px;
@@ -38,15 +45,14 @@ body {
   color: black;
   text-align: center;
   border: none;
+  border-bottom: 2px solid #e78fb3;
 }
 .menuLatihan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuKumpulan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
+  color: #e78fb3;
   transition: 0.5s;
 }
 .menuLatihan {
@@ -106,9 +112,31 @@ body {
   height: 25px;
 }
 
-.download {
+.main {
+  display: flex;
+  flex-direction: row;
   width: 90%;
   height: auto;
+  background-color: #eb5757;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: right;
+  border-radius: 10px;
+}
+.perbaikan {
+  width: 50%;
+  margin-left: 20px;
+  margin-right: auto;
+  font-family: "Poppins";
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.download {
+  width: 90%;
+  height: 100vh;
   background-color: transparent;
   margin-left: auto;
   margin-right: auto;
@@ -128,6 +156,16 @@ body {
 }
 .download table tr {
   border-bottom: 1px solid grey;
+}
+.laporan img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.laporan img:hover{
+    box-shadow: 0px 0px 10px #e78fb3;
 }
 .trash img {
   width: 25px;
