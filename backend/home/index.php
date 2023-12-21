@@ -43,8 +43,8 @@
     </div>
 
     <div class="main3">
-      <a class="paragraf3" href="../mapel/mapel.html">Selengkapnya</a>
-      <a class="paragraf3" href="../mapel/mapel.html"><img src="../icon/next.svg" alt=""></a>
+      <a class="paragraf3" href="../mapel/mapel.php">Selengkapnya</a>
+      <a class="paragraf3" href="../mapel/mapel.php"><img src="../icon/next.svg" alt=""></a>
     </div><br>
 
     <footer>

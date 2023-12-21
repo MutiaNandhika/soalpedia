@@ -42,7 +42,7 @@
       <?php endif?>
       <?php if($_SESSION['login']) : ?>
       <div class="welcome">
-        <p>Selamat Datang <?php echo $_SESSION['username'] ?></p>
+        <a class="btnMasuk" href="../index.php">Selamat Datang <?php echo $_SESSION['username'] ?></a>
         <a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
       <?php endif?>
@@ -61,6 +61,7 @@
             echo "</div>";
         }
       ?>
+    </div>
       <!-- <div class="materi">
         <div><img class="gambarMateri" src="../gambar/pai.svg" alt="" /></div>
         <div>

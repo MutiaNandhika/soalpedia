@@ -84,55 +84,61 @@ body {
   color: white;
 }
 
-.heading{
-  width: 100%;
-  height: auto;
-}
-.paragraf1{
-  font-size: 25px;
-  font-family: "Poppins";
-  font-weight: 600;
-  color: black;
-  margin-bottom: 10px;
-  margin-left: auto;
+.heading {
+  margin-left: 6%;
   margin-right: auto;
-  text-align: center;
-}
-
-.main {
-  width: 100%;
+  width: 30%;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex-flow: wrap;
-  margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
-.materi {
-  width: 300px;
-  height: 180px;
-  margin: 20px;
-  border: 2px solid #9656a1;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.gambarMateri {
-  width: 300px;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 20px 20px 0 0;
-}
-.mapel{
-  margin: auto;
-}
-.namaMateri {
+.heading a {
   font-family: "Poppins";
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   color: black;
+  text-align: center;
+  border: none;
+}
+.heading img {
+  width: 25px;
+  height: 25px;
+}
+
+.download {
+  width: 90%;
+  height: auto;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins";
+  color: black;
+}
+.download table {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-top: 10px;
+}
+.download table tr {
+  border-bottom: 1px solid grey;
+}
+.trash img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  background-color: #b20040;
+  padding: 3px;
+  border-radius: 5px;
+}
+.trash img:hover {
+  background-color: #e78fb3;
 }
 
 footer {
@@ -149,10 +155,4 @@ footer {
   font-weight: 500;
   color: white;
   margin: 6px 20px;
-}
-.welcome {
-  width: 25%;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Optional: Adds some space between the elements */
 }
