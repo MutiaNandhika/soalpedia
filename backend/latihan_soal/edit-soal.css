@@ -92,7 +92,7 @@ body {
 
 .main {
   width: auto;
-  height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   margin-left: 8%;
@@ -112,7 +112,8 @@ table tr td {
   color: black;
   margin-bottom: 20px;
 }
-.judul {
+.kesulitan,
+.kategori {
   font-family: "Poppins";
   font-size: 16px;
   font-weight: 400;
@@ -120,23 +121,35 @@ table tr td {
   border: 1px solid black;
   border-radius: 7px;
   width: 240px;
-  height: 30px;
+  cursor: pointer;
 }
-.judul::placeholder{
+.kesulitan::placeholder,
+.kategori::placeholder .pertanyaan::placeholder {
   font-family: "Poppins";
   font-size: 12px;
   font-weight: 400;
   color: grey;
 }
-.file{
+.pertanyaan {
   font-family: "Poppins";
   font-size: 16px;
   font-weight: 400;
   color: black;
+  border: 1px solid black;
+  border-radius: 7px;
   width: 240px;
-  height: auto;
-  cursor: pointer;
 }
+.opsi {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 240px;
+  margin-bottom: 10px;
+}
+
 .cancel {
   font-family: "Poppins";
   font-size: 15px;
@@ -187,44 +200,4 @@ footer {
   font-weight: 500;
   color: white;
   margin: 6px 20px;
-}
-
-.dropdown {
-  display: inline-block;
-  width: 10%;
-  margin: auto 0;
-}
-.dropdown button {
-  background-color: white;
-  color: #9656a1;
-  font-family: "Poppins";
-  font-size: 15px;
-  font-weight: 400;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 6px 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #9656a1;
-  min-width: 100px;
-  margin-left: 20px;
-  border-radius: 5px;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown:hover button {
-  background-color: #e8da5d;
-  color: white;
-}
-.dropdown a:hover {
-  background-color: #e8da5d;
-  border-radius: 5px;
-  color: white;
 }

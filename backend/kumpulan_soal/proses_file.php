@@ -4,6 +4,7 @@
     if(!isset($_SESSION['login'])){
         header("Location: ../logres.php");
     }
+    $mapel = $_POST['mapel'];
     $tgl = date('Y-m-d');
     $id = $_POST['id'];
     $judul = $_POST['judul'];
@@ -23,17 +24,17 @@
             $query = "INSERT INTO master_soal (id_kategori, nama_file,id_pemilik, tgl) VALUES ('$id', '$file_baru', '$_SESSION[id]', '$tgl')";
             $result = mysqli_query($mysqli, $query);
             if($result){
-                echo "<script>alert('Upload Berhasil');window.location.href='download_materi.php?id=$id';</script>";
+                echo "<script>alert('Upload Berhasil');window.location.href='download_materi.php?id=$id&mapel=$mapel';</script>";
             }
             else{
-                echo "<script>alert('Upload Gagal, file tidak ditambah ke database');window.location.href='download_materi.php?id=$id';</script>";
+                echo "<script>alert('Upload Gagal, file tidak ditambah ke database');window.location.href='download_materi.php?id=$id&mapel=$mapel';</script>";
             }
         }
         else{
-            echo "<script>alert('Upload Gagal, file tidak bisa dipindah');window.location.href='download_materi.php?id=$id';</script>";
+            echo "<script>alert('Upload Gagal, file tidak bisa dipindah');window.location.href='download_materi.php?id=$id&mapel=$mapel';</script>";
         }
     }
     else{
-        echo "<script>alert('Upload Gagal, Hanya menerima pdf atau docx ');window.location.href='download_materi.php?id=$id';</script>";
+        echo "<script>alert('Upload Gagal, Hanya menerima pdf atau docx ');window.location.href='download_materi.php?id=$id&mapel=$mapel';</script>";
     }
 ?>

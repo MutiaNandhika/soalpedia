@@ -7,7 +7,6 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
     }
-    $mapel = $_GET['mapel'];
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Kumpulan Soal</title>
+    <title>Formulir Kategori Soal</title>
 
     <link rel="stylesheet" href="form-materi.css" />
 
@@ -42,42 +41,60 @@
     </nav>
   
     <div class="heading">
-        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>"><img src="../icon/back.svg" alt=""></a>
-        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>">Back</a>
+        <a href="draft_materi.php?id=<?php echo $id ?>"><img src="../icon/back.svg" alt=""></a>
+        <a href="draft_materi.php?id=<?php echo $id ?>">Back</a>
     </div>
 
     <div class="main">
-        <span>Tambah File Materi</span>
-        <form action="proses_file.php" method="post" enctype="multipart/form-data">
+        <span>Tambah Kategori Materi</span>
+        <form action="proses_kategori.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
-                    <td>Judul Materi</td>
+                    <td>Nama Kategori</td>
                     <td>:</td>
                     <td>
-                        <label for="judul"></label>
-                        <input class="judul" type="text" name="judul" placeholder="masukkan judul...">
+                        <label for="kategori"></label>
+                        <input class="judul" type="text" name="kategori" placeholder="masukkan nama kategori...">
                     </td>
                 </tr>
-
-                <tr><td></td></tr>
-
                 <tr>
-                    <td>File Materi</td>
+                    <td>Mata Pelajaran</td>
                     <td>:</td>
                     <td>
-                        <label for="file"></label>
-                        <input class="file" type="file" name="file" placeholder="masukkan file...">
+                    <select class="" name="mapel" id="mapel">
+                        <option value="">Pilih Mata Pelajaran</option>
+                        <?php
+                            $query = "SELECT * FROM mapel";
+                            $result = mysqli_query($mysqli, $query);
+                            while($row = mysqli_fetch_assoc($result)){
+                                echo "<option value='".$row['id']."'";
+                                if($row['id'] == $id){
+                                    echo "selected";
+                                }
+                                echo ">".$row['pelajaran']."</option>";
+                            }
+                        ?>
+                    </select>
                     </td>
                 </tr>
-
-                <tr><td></td></tr>
-
                 <tr>
-                    <td><input type="hidden" name="mapel" value = <?php echo $mapel ?>></td>
+                    <td>Kelas</td>
+                    <td>:</td>
+                    <td>
+                    <select class="" name="kelas" id="kelas">
+                        <option value="">Pilih Kelas</option>
+                        <option value="10">Kelas 10</option>
+                        <option value="11">Kelas 11</option>
+                        <option value="12">Kelas 12</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
                     <td><input type="hidden" name="id" value = <?php echo $id ?>></td>
                     <td>
                         <label for="cancel"></label>
-                        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>" class="cancel" name="cancel" >Cancel</a>
+                        <a href="draft_materi.php?id=<?php echo $id ?>" class="cancel" name="cancel" >Cancel</a>
 
                         <label for="submit"></label>
                         <input class="submit" type="submit" name="submit" value="Submit">

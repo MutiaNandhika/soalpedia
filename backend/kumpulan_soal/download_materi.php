@@ -12,6 +12,7 @@
     $query = "SELECT * FROM master_soal";
     $file = mysqli_query($mysqli, $query);
   }
+  $mapel = $_GET['mapel'];
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
         <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="draft_materi.html">Kumpulan Soal</a>
+        <a class="menuKumpulan" href="">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
         <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
@@ -49,8 +50,8 @@
     </nav>
 
     <div class="heading">
-      <a href="draft_materi.php"><img src="../icon/back.svg" alt=""></a>
-      <a href="draft_materi.php">Back</a>
+      <a href="draft_materi.php?id=<?php echo $mapel?>"><img src="../icon/back.svg" alt=""></a>
+      <a href="draft_materi.php?id=<?php echo $mapel?>">Back</a>
     </div>
 
     <center>
@@ -71,19 +72,19 @@
           </div>
   
         <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
-        <div class="dropdown">
+        <!-- <div class="dropdown">
           <button>Pilih Kelas</button>
           <div class="dropdown-content">
             <a href="#">Kelas 12</a>
             <a href="#">Kelas 11</a>
             <a href="#">Kelas 10</a>
           </div>
-        </div>
+        </div> -->
         <?php if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
         <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
         <div class="tambahSoal">
-          <a class="add" href="form-materi.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
-          <a class="tambah" href="form-materi.php?id=<?php echo $id ?>">Tambah Soal</a>
+          <a class="add" href="form-materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel ?>"><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="form-materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>">Tambah Soal</a>
         </div>
         <?php endif ?>
   
@@ -120,13 +121,14 @@
                 echo "<td>".$row['tgl']."</td>";
                 echo "<td>";
                 if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin'){
-                  echo "<a class='edit' href=''><img src='../icon/edit.svg' alt=''></a>";
-                  echo "<a class='trash' href='delete_file.php?id=".$row['id']."'><img src='../icon/trash.svg' alt=''></a>";
+                  echo "<a class='edit' href='form-materi-edit.php?id=".$row['id']."&kategori=".$id."&mapel=".$mapel."'><img src='../icon/edit.svg' alt=''></a>";
+                  echo "<a class='trash' href='delete_file.php?id=".$row['id']."&kategori=".$id."&mapel=".$mapel."'><img src='../icon/trash.svg' alt=''></a>";
                 }
                 if($_SESSION['role'] == 'siswa'){
                   echo "<a class='unduh' href='../file_soal/".$row['nama_file']."'><img src='../icon/unduh.svg' alt=''></a>";
                 }
                 if($_SESSION['role'] == 'editor'){
+                  echo "<a class='edit' href='form-materi-edit.php?id=".$row['id']."&kategori=".$id."&mapel=".$mapel."'><img src='../icon/edit.svg' alt=''></a>";
                   echo "<div class='kritik-saran'>";
                   echo "<a class='add-kritik' href=''><img src='../icon/add.svg' alt='' /></a>";
                   echo "<a class='krisan' href=''>Kritik & Saran</a>";

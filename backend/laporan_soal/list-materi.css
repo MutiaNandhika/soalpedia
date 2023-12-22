@@ -108,7 +108,7 @@ body {
 
 .download {
   width: 90%;
-  height: auto;
+  height: 100vh;
   background-color: transparent;
   margin-left: auto;
   margin-right: auto;

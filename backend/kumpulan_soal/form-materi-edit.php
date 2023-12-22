@@ -6,8 +6,14 @@
     }
     if(isset($_GET['id'])){
         $id = $_GET['id'];
+        $query = "SELECT * FROM master_soal WHERE id = $id";
+        $file = mysqli_query($mysqli, $query);
+        $row = mysqli_fetch_assoc($file);
+        $file_part = explode(".", $row['nama_file']);
+        $nama = $file_part[0];
     }
-    $mapel = $_GET['mapel'];
+    $kategori = $_GET['kategori'];
+    $mapel = $_GET['mapel'];  
 ?>
 
 <!DOCTYPE html>
@@ -42,20 +48,20 @@
     </nav>
   
     <div class="heading">
-        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>"><img src="../icon/back.svg" alt=""></a>
-        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>">Back</a>
+        <a href="download_materi.php?id=<?php echo $kategori ?>&mapel=<?php echo $mapel ?>"><img src="../icon/back.svg" alt=""></a>
+        <a href="download_materi.php?id=<?php echo $kategori ?>&mapel=<?php echo $mapel ?>">Back</a>
     </div>
 
     <div class="main">
-        <span>Tambah File Materi</span>
-        <form action="proses_file.php" method="post" enctype="multipart/form-data">
+        <span>Edit File Materi</span>
+        <form action="edit_file.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>Judul Materi</td>
                     <td>:</td>
                     <td>
                         <label for="judul"></label>
-                        <input class="judul" type="text" name="judul" placeholder="masukkan judul...">
+                        <input class="judul" type="text" name="judul" placeholder="masukkan judul..." value = "<?php echo $nama ?>">
                     </td>
                 </tr>
 
@@ -70,14 +76,14 @@
                     </td>
                 </tr>
 
-                <tr><td></td></tr>
+                <tr><td><input type="hidden" name="mapel" value = <?php echo $mapel ?>></td></tr>
 
                 <tr>
-                    <td><input type="hidden" name="mapel" value = <?php echo $mapel ?>></td>
+                    <td><input type="hidden" name="kategori" value = <?php echo $kategori ?>></td>
                     <td><input type="hidden" name="id" value = <?php echo $id ?>></td>
                     <td>
                         <label for="cancel"></label>
-                        <a href="download_materi.php?id=<?php echo $id ?>&mapel=<?php echo $mapel?>" class="cancel" name="cancel" >Cancel</a>
+                        <a href="download_materi.php?id=<?php echo $kategori ?>&mapel=<?php echo $mapel ?>" class="cancel" name="cancel" >Cancel</a>
 
                         <label for="submit"></label>
                         <input class="submit" type="submit" name="submit" value="Submit">

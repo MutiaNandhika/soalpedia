@@ -21,28 +21,31 @@
         <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
       </div>
       <div class="menuAwal">
-        <a class="menuLatihan" href="draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html"
-          >Kumpulan Soal</a
-        >
+        <!-- Menu Latihan dan Kumpulan -->
+        <a class="menuLatihan" href="draft_quiz.html"></a>
+        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html"></a>
       </div>
       <div class="btnAwal">
-        <a class="btnMasuk" href="../logres.html">Masuk</a>
-        <a class="btnDaftar" href="../logres.html">Daftar</a>
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Daftar</a>
       </div>
     </nav>
+
+    <div class="heading">
+      <a href="draft_quiz.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="draft_quiz.html">Back</a>
+    </div>
 
     <div class="main">
       <div class="pertanyaan">
         <div class="listPertanyaan">
           <h4>Letak Indonesia</h4>
 
-          <form class="pilgan" action="" method="post">
+          <form class="pilgan" action="hasil_quiz.html" method="post">
+            <!-- Pertanyaan Latihan Soal -->
             <div class="soal">
               <a href="">Pertanyaan</a>
-              <a class="editSoal" href=""
-                ><img src="../icon/edit.svg" alt=""
-              /></a>
+              <a class="editSoal" href="edit-soal.html"><img src="../icon/edit.svg" alt=""/></a>
             </div>
 
             <p>Siapa presiden Indonesia saat ini?</p>
@@ -58,101 +61,132 @@
 
             <input class="jawaban" type="radio" name="jawaban" id="jawaban4" />
             <label for="jawaban4">Sesa</label>
+
+            <!-- PAGINATION untuk berpindah ke nomor berikutnya -->
+            <div class="pagination">
+              <button class="btn1" onclick="backBtn()"> < previous</button>
+              <ul>
+                <li class="link active" value="1" onclick="activeLink()">1</li>
+                <li class="link" value="2" onclick="activeLink()">2</li>
+                <li class="link" value="3" onclick="activeLink()">3</li>
+                <li class="link" value="4" onclick="activeLink()">4</li>
+                <li class="link" value="5" onclick="activeLink()">5</li>
+                <li class="link" value="6" onclick="activeLink()">6</li>
+              </ul>
+              <button class="btn2" onclick="nextBtn()">&nbsp;&nbsp; next ></button>
+            </div>
+
+            <div class="selesai">
+              <!-- Tombol Selesai -->
+              <button type="submit">Selesai</button>
+            </div>
           </form>
         </div>
-        <div class="btnPertanyaan">
-          <a class="prev" href="">Previous Question</a>
-          <a class="next" href="">Next Question</a>
-          <a class="finish" href="">Finish</a>
-        </div>
       </div>
 
+      <!-- DROPDOWN Pelaporan -->
       <div class="dropdown">
         <img src="../icon/info.svg" alt="" />
-        <div class="dropdown-content">
-          <p>Laporkan Soal</p>
-          <input
-            type="radio"
-            name="laporan"
-            id="menyimpang"
-            value="Soal Menyimpang"
-          />
-          <label for="menyimpang">Soal Menyimpang</label><br />
+        <form action="../laporan_soal/list-soal.html">
+          <div class="dropdown-content">
+            <p>Laporkan Soal</p>
+            <input
+              type="radio"
+              name="laporan"
+              id="menyimpang"
+              value="Soal Menyimpang"
+            />
+            <label for="menyimpang">Soal Menyimpang</label><br />
 
-          <input
-            type="radio"
-            name="laporan"
-            id="teknis"
-            value="Kesalahan Teknis"
-          />
-          <label for="teknis">Kesalahan Teknis</label><br />
+            <input
+              type="radio"
+              name="laporan"
+              id="teknis"
+              value="Kesalahan Teknis"
+            />
+            <label for="teknis">Kesalahan Teknis</label><br />
 
-          <input
-            type="radio"
-            name="laporan"
-            id="instruksi"
-            value="Ketidakjelasan Instruksi"
-          />
-          <label for="instruksi">Ketidakjelasan Instruksi</label><br />
+            <input
+              type="radio"
+              name="laporan"
+              id="instruksi"
+              value="Ketidakjelasan Instruksi"
+            />
+            <label for="instruksi">Ketidakjelasan Instruksi</label><br />
 
-          <input
-            type="radio"
-            name="laporan"
-            id="konten"
-            value="Konten Tidak Pantas"
-          />
-          <label for="konten">Konten Tidak Pantas</label><br />
+            <input
+              type="radio"
+              name="laporan"
+              id="konten"
+              value="Konten Tidak Pantas"
+            />
+            <label for="konten">Konten Tidak Pantas</label><br />
 
-          <input
-            type="radio"
-            name="laporan"
-            id="perbaikan"
-            value="Usulan Perbaikan"
-          />
-          <label for="perbaikan">Usulan Perbaikan</label><br /><br />
+            <input
+              type="radio"
+              name="laporan"
+              id="perbaikan"
+              value="Usulan Perbaikan"
+            />
+            <label for="perbaikan">Usulan Perbaikan</label><br /><br />
 
-          <button class="kirim" type="submit">Kirim</button>
-          <button class="batal" type="button">Batal</button>
-        </div>
+            <button class="kirim" type="submit">Kirim</button>
+            <button class="batal" type="button">Batal</button>
+          </div>
+      </form>
       </div>
 
+      <!-- MAPEL -->
       <div class="mapel">
         <div class="jenisMapel">
-          <img src="../gambar/matematika.svg" alt="Math" />
+          <!-- Gambar Mapel -->
+          <div class="gambar-mapel">
+            <img src="../gambar/pancasila.svg" alt="Math" />
+          </div>
 
+          <!-- Nama Mapel -->
           <div class="isiMapel">
             <h3 class="nmMapel">Pendidikan Pancasila</h3>
-            <p>Pertanyaan <br />15/25</p>
-            <p>Time Remaining <br />00:09:13 left</p>
+            <!-- Pertanyaan yang sudah dijawab --><p>Pertanyaan <br />15/25</p>
+            <!-- Waktu pengerjaan --><p>Time Remaining <br />00:09:13 left</p>
           </div>
-        </div>
-
-        <div class="nomorSoal">
-          <table border="1">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
         </div>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="copyRight">&copy; 2023, SoalPedia</p>
+    </footer>
+
+    <script>
+      let link = document.getElementsByClassName("link");
+      let currentValue = 1;
+
+      function activeLink() {
+        for (let i = 0; i < link.length; i++) {
+          link[i].addEventListener("click", function () {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            currentValue = this.value;
+          });
+        }
+      }
+
+      function backBtn() {
+        if (currentValue > 1) {
+          currentValue--;
+          link[currentValue - 1].click();
+        }
+      }
+
+      function nextBtn() {
+        if (currentValue < link.length) {
+          currentValue++;
+          link[currentValue - 1].click();
+        }
+      }
+    </script>
   </body>
 </html>

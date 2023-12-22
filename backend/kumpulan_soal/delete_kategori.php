@@ -4,11 +4,10 @@
     if(!isset($_SESSION['login'])){
         header("Location: logres.php");
     }
-    $mapel = $_GET['mapel'];
     $kategori = $_GET['kategori'];
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $query = "SELECT * FROM master_soal WHERE id = $id";
+        $query = "SELECT * FROM master_soal WHERE id_kategori = $id";
         $file = mysqli_query($mysqli, $query);
         
         if ($file) {
@@ -16,15 +15,17 @@
             $filePath = '../file_soal/' . $row['nama_file'];
             
             // Delete file from the database
-            $deleteQuery = "DELETE FROM master_soal WHERE id = $id";
+            $deleteQuery = "DELETE FROM master_soal WHERE id_kategori = $id";
             mysqli_query($mysqli, $deleteQuery);
             
             // Delete file from the path
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
-            echo "<script>alert('File berhasil dihapus!');window.location.href='download_materi.php?id=".$kategori."&mapel=".$mapel."';</script>";
         }
+        $delete = "DELETE FROM kategori WHERE id = $id";
+        mysqli_query($mysqli, $delete);
+        echo "<script>alert('Kategori berhasil dihapus!');window.location.href='draft_materi.php?id=".$kategori."';</script>";
     }
     
 ?>

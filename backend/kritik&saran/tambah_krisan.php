@@ -1,11 +1,19 @@
+<?php
+    require_once '../config.php';
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: logres.php");
+    }
+    $id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Latihan Soal</title>
+    <title>Formulir Kritik dan Saran</title>
 
-    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="tambah.css" />
 
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,50 +33,36 @@
             <a class="menuKumpulan" href=""></a>
         </div>
         <div class="btnAwal">
-            <!-- Buat nama user --><a class="user" href="">Halo, Nandhi</a>
+            <!-- Buat nama user --><a class="user" href="">Halo, <?php echo $_SESSION['username'] ?></a>
         </div>
     </nav>
   
     <div class="heading">
-        <a href="draft_quiz.html"><img src="../icon/back.svg" alt=""></a>
-        <a href="draft_quiz.html">Back</a>
+        <a href="../kumpulan_soal/draft_materi.php?id=<?php echo $id ?>"><img src="../icon/back.svg" alt=""></a>
+        <a href="../kumpulan_soal/draft_materi.php?id=<?php echo $id ?>">Back</a>
     </div>
 
     <div class="main">
-        <span>Tambah Soal</span>
-        <form action="" method="post">
+        <span>Tambah Kritik dan Saran</span>
+        <form action="proses_krisan.php" method="post">
             <table>
                 <tr>
-                    <td>Judul Soal</td>
+                    <td>Kritik</td>
                     <td>:</td>
                     <td>
-                        <label for="judul"></label>
-                        <input class="judul" type="text" name="judul" placeholder="masukkan judul...">
+                        <label for="kritik"></label>
+                        <textarea class="kritik" name="kritik" rows="4" placeholder="ketik kritik..."></textarea>
                     </td>
                 </tr>
 
                 <tr><td></td></tr>
 
                 <tr>
-                    <td>Pertanyaan</td>
+                    <td>Saran</td>
                     <td>:</td>
                     <td>
-                        <label for="pertanyaan"></label>
-                        <textarea class="pertanyaan" name="pertanyaan" rows="4" placeholder="masukkan pertanyaan..."></textarea>
-                    </td>
-                </tr>
-
-                <tr><td></td></tr>
-
-                <tr>
-                    <td>Kesulitan</td>
-                    <td>:</td>
-                    <td>
-                        <label for="kesulitan"></label>
-                        <select class="kesulitan" name="kesulitan" id="kesulitan">
-                            <option value="mudah">Mudah</option>
-                            <option value="sulit">Sulit</option>
-                        </select>
+                        <label for="saran"></label>
+                        <textarea class="saran" name="saran" rows="4" placeholder="ketik saran..."></textarea>
                     </td>
                 </tr>
 
@@ -76,11 +70,13 @@
 
                 <tr>
                     <td></td>
-                    <td></td>
+                    <td><input type="hidden" name="id" value ="<?php echo $id ?>"></td>
                     <td>
+                        <!-- Cancel Kritik & Saran -->
                         <label for="cancel"></label>
-                        <input class="cancel" type="submit" name="cancel" value="Cancel">
+                        <input class="cancel" type="reset" name="cancel" value="Cancel">
 
+                        <!-- Submit Kritik & Saran -->
                         <label for="submit"></label>
                         <input class="submit" type="submit" name="submit" value="Submit">
                 </td>

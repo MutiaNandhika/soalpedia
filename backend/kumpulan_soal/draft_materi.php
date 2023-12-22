@@ -12,6 +12,7 @@
     $query = "SELECT * FROM kategori";
     $kategori = mysqli_query($mysqli, $query);
   }
+  $mapel = $_GET['mapel'];
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
         <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="draft_materi.php?id=<?php echo $id ?>">Kumpulan Soal</a>
+        <a class="menuKumpulan" href="">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
         <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
@@ -49,10 +50,30 @@
     </nav>
 
     <div class="heading">
+      <div class="back">
       <a href="../mapel/mapel.php"><img src="../icon/back.svg" alt=""></a>
       <a href="../mapel/mapel.php">Back</a>
-    </div>
+      </div>
 
+      <div class="kritik-saran">
+        <a class="tambah" href="../kritik&saran/tambah_krisan.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt="" /></a>
+        <a class="krisan" href="../kritik&saran/tambah_krisan.php?id=<?php echo $id ?>">Kritik & Saran</a>
+      </div>
+      <?php if ($_SESSION['role'] == 'editor') : ?>
+      <!-- Lihat Laporan HANYA UNTUK EDITOR -->
+      <div class="lihat-laporan">
+        <a href="../laporan_soal/pelaporan-materi.html">Lihat Laporan</a>
+      </div>
+      <?php endif ?>
+      <?php if ( $_SESSION['role'] == 'admin') : ?>
+      <!-- Tombol Lihat Kritik & Saran HANYA UNTUK ADMIN -->
+      <div class="lihat-krisan">
+        <a class="info" href="../kritik&saran/kritik_saran.php?id=<?php echo $id ?>"><img src="../icon/info2.svg" alt="" /></a>
+        <a class="lihat" href="../kritik&saran/kritik_saran.php?id=<?php echo $id ?>">Lihat Kritik & Saran</a>
+      </div>
+      <?php endif ?>
+    </div>
+    
     <center>
       <div class="main">
         <!-- Nama Mapel -->
@@ -83,8 +104,8 @@
         <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
         <?php if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
         <div class="tambahSoal">
-          <a class="add" href=""><img src="../icon/add.svg" alt=""></a>
-          <a class="tambah" href="">Tambah Soal</a>
+          <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Kategori</a>
         </div>
         <?php endif ?>
   
@@ -101,12 +122,12 @@
           echo "<div class='draftMapel'>";
           echo "<div class='listMapel'>";
           echo "<img src='../gambar/materi.svg' alt=''>";
-          echo "<a class='mapel-1' href='download_materi.php?id=".$row['id']."'>".$row['kategori']."</a>";
+          echo "<a class='mapel-1' href='download_materi.php?id=".$row['id']."&mapel=".$id."'>".$row['kategori']."</a>";
           echo "</div>";
           if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'editor'){
             echo "<div class='icon'>";
             echo "<a class='edit' href=''><img src='../icon/edit.svg' alt=''></a>";
-            echo "<a class='trash' href=''><img src='../icon/trash.svg' alt=''></a>";
+            echo "<a class='trash' href='delete_kategori.php?id=".$row['id']."&kategori=".$id."'><img src='../icon/trash.svg' alt=''></a>";
             echo "</div>";
           }
           echo "</div>";
