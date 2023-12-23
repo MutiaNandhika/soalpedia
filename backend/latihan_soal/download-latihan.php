@@ -114,7 +114,7 @@
                     echo "<td>".$jawaban['teks_pilihan']."</td>";
                     echo "<td>";
                     echo "<a class='edit'href='edit-soal.php?id=".$row['id']."&kategori=".$kategori."'><img src='../icon/edit.svg' alt=''></a>";
-                    echo '<a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>';
+                    echo "<a class='trash' href='delete_soal.php?id=".$row['id']."&kategori=".$kategori."&mapel=".$id."'><img src='../icon/trash.svg' alt=''></a>";
                     echo "</td>";
                     echo "</tr>";
                 }
