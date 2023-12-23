@@ -219,6 +219,7 @@ body {
   height: auto;
   background-color: transparent;
   border: none;
+  margin-top: 7px;
   margin-left: 5%;
   margin-right: auto;
   cursor: pointer;

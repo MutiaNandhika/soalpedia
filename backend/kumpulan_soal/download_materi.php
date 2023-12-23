@@ -72,14 +72,14 @@
           </div>
   
         <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
-        <!-- <div class="dropdown">
+        <div class="dropdown">
           <button>Pilih Kelas</button>
           <div class="dropdown-content">
             <a href="#">Kelas 12</a>
             <a href="#">Kelas 11</a>
             <a href="#">Kelas 10</a>
           </div>
-        </div> -->
+        </div>
         <?php if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
         <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
         <div class="tambahSoal">
@@ -115,7 +115,57 @@
                 $result = mysqli_query($mysqli, $pemilik);
                 $user = mysqli_fetch_assoc($result);
                 $pemilik = $user['nama'];
-                echo "<td>".$nama."</td>";
+                echo "<td>".$nama."";
+                echo '<form action="../laporan_soal/proses_laporan_file.php" method="POST">
+                <div class="dropdown1">
+                  <img src="../icon/info.svg" alt="" />
+                  <div class="dropdown-content1">
+                    <p>Laporkan Soal</p>
+                    <input
+                      type="radio"
+                      name="laporan"
+                      id="menyimpang"
+                      value="Soal Menyimpang"
+                    />
+                    <label for="menyimpang">Soal Menyimpang</label><br />
+          
+                    <input
+                      type="radio"
+                      name="laporan"
+                      id="teknis"
+                      value="Kesalahan Teknis"
+                    />
+                    <label for="teknis">Kesalahan Teknis</label><br />
+          
+                    <input
+                      type="radio"
+                      name="laporan"
+                      id="instruksi"
+                      value="Ketidakjelasan Instruksi"
+                    />
+                    <label for="instruksi">Ketidakjelasan Instruksi</label><br />
+          
+                    <input
+                      type="radio"
+                      name="laporan"
+                      id="konten"
+                      value="Konten Tidak Pantas"
+                    />
+                    <label for="konten">Konten Tidak Pantas</label><br />
+          
+                    <input
+                      type="radio"
+                      name="laporan"
+                      id="perbaikan"
+                      value="Usulan Perbaikan"
+                    />
+                    <label for="perbaikan">Usulan Perbaikan</label><br /><br />
+                    <input type="hidden" name="id" value="'.$row['id'].'" />
+                    <button class="kirim" type="submit">Kirim</button>
+                    <button class="batal" type="button">Batal</button>
+                  </div>
+                </div>
+              </form></td>';
                 echo "<td>".$pemilik."</td>";
                 echo "<td>".$ext."</td>";
                 echo "<td>".$row['tgl']."</td>";
@@ -129,10 +179,6 @@
                 }
                 if($_SESSION['role'] == 'editor'){
                   echo "<a class='edit' href='form-materi-edit.php?id=".$row['id']."&kategori=".$id."&mapel=".$mapel."'><img src='../icon/edit.svg' alt=''></a>";
-                  echo "<div class='kritik-saran'>";
-                  echo "<a class='add-kritik' href=''><img src='../icon/add.svg' alt='' /></a>";
-                  echo "<a class='krisan' href=''>Kritik & Saran</a>";
-                  echo "</div>";
                 }
                 echo "</td>";
                 echo "</tr>";

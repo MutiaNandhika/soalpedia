@@ -40,7 +40,7 @@
       </div>
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
-        <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
+        <a class="menuLatihan" href="../latihan_soal/draft_quiz.php?id=<?php echo $id?>">Latihan Soal</a>
         <a class="menuKumpulan" href="">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
@@ -62,7 +62,7 @@
       <?php if ($_SESSION['role'] == 'editor') : ?>
       <!-- Lihat Laporan HANYA UNTUK EDITOR -->
       <div class="lihat-laporan">
-        <a href="../laporan_soal/pelaporan-materi.html">Lihat Laporan</a>
+        <a href="../laporan_soal/list-materi.php?id=<?php echo $id ?>">Lihat Laporan</a>
       </div>
       <?php endif ?>
       <?php if ( $_SESSION['role'] == 'admin') : ?>

@@ -213,6 +213,13 @@ body {
   color: greenyellow;
 }
 
+.jawaban .wrong {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+}
+
 .komentar {
   width: 80%;
   height: auto;
@@ -284,6 +291,7 @@ body {
   height: auto;
   background-color: transparent;
   border: none;
+  margin-top: 7px;
   margin-left: 5px;
   margin-right: auto;
   cursor: pointer;

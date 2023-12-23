@@ -1,3 +1,12 @@
+<?php
+    require_once '../config.php';
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: logres.php");
+    }
+    $id = $_GET['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,14 +36,14 @@
         <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
-        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
     </nav>
 
     <div class="heading">
-      <a href="hasil_quiz.html"><img src="../icon/back.svg" alt=""></a>
-      <a href="hasil_quiz.html">Back</a>
+      <a href="../mapel/mapel.php"><img src="../icon/back.svg" alt=""></a>
+      <a href="../mapel/mapel.php">Back</a>
     </div>
 
     <center>
@@ -48,7 +57,27 @@
 
                 <tr>
                     <td colspan="2" class="komen-list">
-                        <div class="komen">
+                    <?php
+                      $query = "SELECT * FROM komentar WHERE id_kategori = $id";
+                      $komentar = mysqli_query($mysqli, $query);
+                        while($row = mysqli_fetch_assoc($komentar)){
+                          echo "<div class='komen'>";
+                          $user_query = "SELECT * FROM user WHERE id = ".$row['id_user'];
+                          $user = mysqli_fetch_assoc(mysqli_query($mysqli, $user_query));
+                          echo "<span>".$user['username']." - ".$user['role']."</span>";
+                          echo "<div class='isi-komen'>";
+                          echo "<p>".$row['komentar']."</p>";
+                          if ($_SESSION['role'] == 'admin'|| $_SESSION['role'] == 'guru') {
+                            echo "<a href='delete_komentar.php?id=".$row['id']."'><img src='../icon/trash.svg'></a>";
+                          }
+                          echo "<button><img src='../icon/trash.svg'></button>";
+                          echo "</div>";
+                          echo "</div>";
+
+                          
+                        }
+                    ?>
+                        <!-- <div class="komen">
                           <span>Nandhi - Siswa</span>
                           <div class="isi-komen">
                             <p>Pada soal nomor 1 terdapat salah ketik</p>
@@ -62,16 +91,19 @@
                             <p>Pada soal nomor 1 terdapat salah ketik</p>
                             <button><img src="../icon/trash.svg"></button>
                           </div>
-                        </div>
+                        </div> -->
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2" class="submit">
-                        <label for="submit"></label>
-                        <input type="text" placeholder="Kirim Komentar...">
-
-                        <button><img src="../icon/submit.svg" alt=""></button>
+                    <form action="proses_komentar.php" method="POST">
+                            <input type="hidden" name="id_kategori" value="<?php echo $id ?>">
+                            <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>">
+                            <input type="text" name="komentar" placeholder="Kirim Komentar...">
+                            <label for="submit"></label>
+                            <button type="submit"><img src="../icon/submit.svg" alt=""></button>
+                        </form>
                     </td>
                 </tr>
             </table>

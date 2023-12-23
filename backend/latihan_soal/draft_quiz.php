@@ -1,3 +1,11 @@
+<?php
+    require_once '../config.php';
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: logres.php");
+    }
+    $id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,45 +31,56 @@
       </div>
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
-        <a class="menuLatihan" href="draft_quiz.html">Latihan Soal</a>
-        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.html">Kumpulan Soal</a>
+        <a class="menuLatihan" href="">Latihan Soal</a>
+        <a class="menuKumpulan" href="../kumpulan_soal/draft_materi.php?id=<?php echo $id ?>">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">
-        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
     </nav>
 
     <div class="heading">
       <div class="back">
-        <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
-        <a href="../mapel/mapel.html">Back</a>
+        <a href="../mapel/mapel.php"><img src="../icon/back.svg" alt=""></a>
+        <a href="../mapel/mapel.php">Back</a>
       </div>
 
-      <!-- Tombol Kritik & Saran UNTUK SISWA, GURU -->
       <div class="kritik-saran">
-        <a class="tambah" href="../kritik&saran/tambah_krisan.html"><img src="../icon/add.svg" alt="" /></a>
-        <a class="krisan" href="../kritik&saran/tambah_krisan.html">Kritik & Saran</a>
+        <a class="tambah" href="../kritik&saran/tambah_krisan.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt="" /></a>
+        <a class="krisan" href="../kritik&saran/tambah_krisan.php?id=<?php echo $id ?>">Kritik & Saran</a>
       </div>
-
+      <?php if ($_SESSION['role'] == 'editor') : ?>
       <!-- Lihat Laporan HANYA UNTUK EDITOR -->
       <div class="lihat-laporan">
-        <a href="../laporan_soal/pelaporan-soal.html">Lihat Laporan</a>
+        <a href="../laporan_soal/list-materi.php?id=<?php echo $id ?>">Lihat Laporan</a>
       </div>
-
+      <?php endif ?>
+      <?php if ( $_SESSION['role'] == 'admin') : ?>
       <!-- Tombol Lihat Kritik & Saran HANYA UNTUK ADMIN -->
       <div class="lihat-krisan">
-        <a class="info" href="../kritik&saran/kritik_saran.html"><img src="../icon/info2.svg" alt="" /></a>
-        <a class="lihat" href="../kritik&saran/kritik_saran.html">Lihat Kritik & Saran</a>
+        <a class="info" href="../kritik&saran/kritik_saran.php?id=<?php echo $id ?>"><img src="../icon/info2.svg" alt="" /></a>
+        <a class="lihat" href="../kritik&saran/kritik_saran.php?id=<?php echo $id ?>">Lihat Kritik & Saran</a>
       </div>
+      <?php endif ?>
     </div>
 
     <center>
     <div class="main">
       <!-- Nama Mapel -->
-        <div class="namaMapel">
-            <p>Pendidikan Pancasila</p>
-        </div>
+      <div class="namaMapel">
+            <?php if(isset($_GET['id'])) : ?>
+              <?php
+                $id = $_GET['id'];
+                $query = "SELECT * FROM mapel WHERE id = $id";
+                $result = mysqli_query($mysqli, $query);
+                $row = mysqli_fetch_assoc($result);
+              ?>
+              <p><?php echo $row['pelajaran'] ?></p>
+            <?php else : ?>
+              <p>Semua Materi</p>
+            <?php endif ?>
+          </div>
 
       <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa -->
       <div class="dropdown">
@@ -95,47 +114,66 @@
         </div>
     </div>
     </center>
-
-    <div class="draft">
+    <div class='draft'>
+    <?php
+        $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+        $result = mysqli_query($mysqli, $query);
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<div class='draftQuiz'>";
+            echo "<div class='listQuiz'>";
+            echo "<img src='../gambar/quiz.svg' alt=''>";
+            echo "<a class='quiz-1' href='soal.php?id=".$row['id']."&mapel=".$id."'>".$row['kategori']."</a>";
+            echo "</div>";
+            if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') {
+                echo "<div class='icon'>";
+                echo "<a class='edit' href='edit-soal.php?id=".$row['id']."'><img src='../icon/edit.svg' alt=''></a>";
+                echo "<a class='trash' href='delete-soal.php?id=".$row['id']."'><img src='../icon/trash.svg' alt=''></a>";
+                echo "</div>";
+            }
+            echo "</div>";
+        }
+    ?>
+    </div>
+    <!-- <div class="draft">
       <div class="draftQuiz">
-        <!-- List Soal Quiz -->
+        List Soal Quiz
         <div class="listQuiz">
           <img src="../gambar/quiz.svg" alt="">
           <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
         </div>
         
-        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
+        Tombol Edit dan Hapus buat Guru,Admin
         <div class="icon">
           <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
         </div>
       </div>
 
       <div class="draftQuiz">
-        <!-- List Soal Quiz -->
+        List Soal Quiz
         <div class="listQuiz">
           <img src="../gambar/quiz.svg" alt="">
           <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
         </div>
         
-        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
+        Tombol Edit dan Hapus buat Guru,Admin
         <div class="icon">
           <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
         </div>
       </div>
       
       <div class="draftQuiz">
-        <!-- List Soal Quiz -->
+        List Soal Quiz
         <div class="listQuiz">
           <img src="../gambar/quiz.svg" alt="">
           <a class="quiz-1" href="soal.html">Luas dan batas wilayah Indonesia</a>
         </div>
         
-        <!-- Tombol Edit dan Hapus buat Guru,Admin -->
+        Tombol Edit dan Hapus buat Guru,Admin
         <div class="icon">
           <a class="edit" href="edit-soal.html"><img src="../icon/edit.svg" alt=""></a> <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- FOOTER -->
     <footer>
