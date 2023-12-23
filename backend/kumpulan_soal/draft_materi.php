@@ -100,13 +100,13 @@
           <a href="#">Kelas 10</a>
         </div>
       </div>
-
+      <?php if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
       <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
       <div class="tambahSoal">
         <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
         <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Soal</a>
       </div>
-
+      <?php endif ?>
       <!-- Kesulitan -->
       <div class="kesulitan">
         <select class="level" name="kesulitan" id="kesulitan">

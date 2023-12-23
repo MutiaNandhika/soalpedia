@@ -94,7 +94,7 @@
               <input type="text" name="search" placeholder="Cari...">
           </div>
       </div>
-
+      </center>
       <div class="download">
         <!-- TABEL Materi -->
         <table border="0" cellpadding="10" cellspacing="0">

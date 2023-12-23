@@ -83,7 +83,7 @@
                 echo "<a class='editSoal' href='edit-soal.html'><img src='../icon/edit.svg' alt=''/></a>";
                 echo "</div>";
                 echo "<p>".$row['pertanyaan']."</p>";
-                $pilihan = mysqli_query($mysqli, "SELECT * FROM pilihan WHERE id_soal = $row[id]");
+                $pilihan = mysqli_query($mysqli, "SELECT * FROM pilihan WHERE id_soal = $row[id] order by rand()");
                 $opt = "a";
                 while($pil = mysqli_fetch_assoc($pilihan)){
                   echo "<input class='jawaban' type='radio' name='jawaban".$i."' id='jawaban".$i."".$opt."' value='".$pil['id']."'";

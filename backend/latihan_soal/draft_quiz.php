@@ -53,7 +53,7 @@
       <?php if ($_SESSION['role'] == 'editor') : ?>
       <!-- Lihat Laporan HANYA UNTUK EDITOR -->
       <div class="lihat-laporan">
-        <a href="../laporan_soal/list-materi.php?id=<?php echo $id ?>">Lihat Laporan</a>
+        <a href="../laporan_soal/list-soal.php?id=<?php echo $id ?>">Lihat Laporan</a>
       </div>
       <?php endif ?>
       <?php if ( $_SESSION['role'] == 'admin') : ?>
@@ -91,13 +91,13 @@
           <a href="#">Kelas 10</a>
         </div>
       </div>
-
+      <?php if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
       <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
       <div class="tambahSoal">
-        <a class="add" href="tambah-soal.html"><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="tambah-soal.html">Tambah Soal</a>
+        <a class="add" href="../kumpulan_soal/form-kategori.php?id=<?php echo $id?>"><img src="../icon/add.svg" alt=""></a>
+        <a class="tambah" href="../kumpulan_soal/form-kategori.php?id=<?php echo $id?>">Tambah Soal</a>
       </div>
-
+      <?php endif ?>
       <!-- Kesulitan -->
       <div class="kesulitan">
         <select class="level" name="kesulitan" id="kesulitan">
@@ -126,8 +126,9 @@
             echo "</div>";
             if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') {
                 echo "<div class='icon'>";
+                echo "<a class='info3' href='download-latihan.php?id=".$row['id']."&kategori=".$id."'><img src='../icon/info3.svg' alt=''></a>";
                 echo "<a class='edit' href='edit-soal.php?id=".$row['id']."'><img src='../icon/edit.svg' alt=''></a>";
-                echo "<a class='trash' href='delete-soal.php?id=".$row['id']."'><img src='../icon/trash.svg' alt=''></a>";
+                echo "<a class='trash' href='../kumpulan_soal/delete_kategori.php?id=".$row['id']."&kategori=".$id."'><img src='../icon/trash.svg' alt=''></a>";
                 echo "</div>";
             }
             echo "</div>";

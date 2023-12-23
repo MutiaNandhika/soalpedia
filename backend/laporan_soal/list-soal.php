@@ -1,3 +1,13 @@
+<?php
+    require_once '../config.php';
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: logres.php");
+    }
+    $query = "SELECT * FROM pelaporan";
+    $laporan = mysqli_query($mysqli, $query);
+    $id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>List Laporan</title>
 
-    <link rel="stylesheet" href="list-soal.css" />
+    <link rel="stylesheet" href="list-materi.css" />
 
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,14 +37,14 @@
         <a class="menuKumpulan" href=""></a>
       </div>
       <div class="btnAwal">
-        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Nandhi</a>
-        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
     </nav>
 
     <div class="heading">
-      <a href="pelaporan-soal.html"><img src="../icon/back.svg" alt=""></a>
-      <a href="pelaporan-soal.html">Back</a>
+      <a href="../kumpulan_soal/draft_materi.php?id=<?php echo $id ?>"><img src="../icon/back.svg" alt=""></a>
+      <a href="../kumpulan_soal/draft_materi.php?id=<?php echo $id ?>">Back</a>
     </div>
 
     <center>
@@ -46,14 +56,28 @@
                 <th>Masalah</th>
                 <th>Aksi</th>
             </tr>
-            <tr>
+            <?php
+                while($row = mysqli_fetch_assoc($laporan)){
+                    if($row['id_soal'] == NULL){
+                        continue;
+                    }
+                    $id_soal = $row['id_soal'];
+                    $query = "SELECT * FROM soal WHERE id = $id_soal";
+                    $soal = mysqli_fetch_assoc(mysqli_query($mysqli, $query));
+                    echo "<tr>";
+                    echo "<td>".$soal['pertanyaan']."</td>";
+                    echo "<td>".$row['masalah']."</td>";
+                    echo "<td><a class='trash' href=''><img src='../icon/trash.svg' alt=''></a></td>";
+                    echo "</tr>";
+                }
+            ?>
+            <!-- <tr>
                 <td>Soal Indonesia Maritim</td>
                 <td>Soal menyimpang, kunci jawaban salah</td>
                 <td>
-                  <!-- Tombol menghapus laporan -->
                   <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
                 </td>
-            </tr>
+            </tr> -->
         </table>
       </div>
     </center>

@@ -6,8 +6,9 @@
     }
     $id = $_GET['id'];
     $mapel = $_GET['kategori'];
-    $query = "SELECT * FROM kategori WHERE id_mapel = $mapel";
+    $query = "SELECT * FROM soal WHERE id = $id";
     $result = mysqli_query($mysqli, $query);
+    $row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Latihan Soal</title>
+    <title>Edit Latihan Soal</title>
 
     <link rel="stylesheet" href="tambah-soal.css" />
 
@@ -42,13 +43,13 @@
     </nav>
   
     <div class="heading">
-        <a href="draft_quiz.php?id=<?php echo $id ?>"><img src="../icon/back.svg" alt=""></a>
-        <a href="draft_quiz.phpid=<?php echo $id ?>">Back</a>
+        <a href="draft_quiz.php?id=<?php echo $mapel ?>"><img src="../icon/back.svg" alt=""></a>
+        <a href="draft_quiz.phpid=<?php echo $mapel ?>">Back</a>
     </div>
 
     <div class="main">
-        <span>Tambah Soal</span>
-        <form action="proses_soal.php" method="post">
+        <span>Edit Soal</span>
+        <form action="proses_edit_soal.php" method="post">
             <table>
                 <tr>
                     <td>Kesulitan</td>
@@ -56,8 +57,20 @@
                     <td>
                         <label for="kesulitan"></label>
                         <select class="kesulitan" name="kesulitan" id="kesulitan">
-                            <option value="mudah">Mudah</option>
-                            <option value="sulit">Sulit</option>
+                            <option value="mudah"
+                            <?php
+                                if($row['kesulitan'] == 'mudah'){
+                                    echo " selected";
+                                }
+                            ?>  
+                            >Mudah</option>
+                            <option value="sulit"
+                            <?php
+                                if($row['kesulitan'] == 'sulit'){
+                                    echo " selected";
+                                }
+                            ?>
+                            >Sulit</option>
                         </select>
                     </td>
                 </tr>
@@ -72,12 +85,14 @@
                         <label for="kategori"></label>
                         <select class="kategori" name="kategori" id="kategori">
                             <?php
-                                while($row = mysqli_fetch_assoc($result)){
-                                    echo "<option value=".$row['id']."";
-                                    if($row['id'] == $id){
+                                $kategori_query = "SELECT * FROM kategori WHERE id_mapel = $mapel";
+                                $kategori_result = mysqli_query($mysqli, $kategori_query);
+                                while($kategori_row = mysqli_fetch_assoc($kategori_result)){
+                                    echo "<option value=".$kategori_row['id']."";
+                                    if($kategori_row['id'] == $id){
                                         echo " selected";
                                     }
-                                    echo ">".$row['kategori']."</option>";
+                                    echo ">".$kategori_row['kategori']."</option>";
                                 }
                             ?>
                         </select>
@@ -91,7 +106,7 @@
                     <td>:</td>
                     <td>
                         <label for="pertanyaan"></label>
-                        <textarea class="pertanyaan" name="pertanyaan" rows="4" placeholder="ketik pertanyaan..."></textarea>
+                        <textarea class="pertanyaan" name="pertanyaan" rows="4" placeholder="ketik pertanyaan..."><?php echo $row['pertanyaan'] ?></textarea>
                     </td>
                 </tr>
 
@@ -102,17 +117,37 @@
                     <td>Opsi</td>
                     <td>:</td>
                     <td>
-                        <label for="opsi1"></label>
-                        <input class="opsi" type="text" name="jawaban" placeholder="Masukkan jawaban disini"><br>
-
-                        <label for="opsi2"></label>
+                        <?php
+                            $query_jawaban = "SELECT * FROM pilihan WHERE id = ".$row['jawaban'];
+                            $result_jawaban = mysqli_query($mysqli, $query_jawaban);
+                            $jawaban = mysqli_fetch_assoc($result_jawaban);
+                        ?>
+                        <input class="opsi" type="text" name="jawaban" value="<?php echo $jawaban['teks_pilihan'] ?>" placeholder="Masukkan jawaban disini">
+                        <input type="hidden" name="id_jawaban" value="<?php echo $jawaban['id'] ?>">
+                        <label for="jawaban"><-Jawaban disini</label><br>
+                        
+                        <?php
+                            $query_pilihan = "SELECT * FROM pilihan WHERE id_soal = $id";
+                            $result_pilihan = mysqli_query($mysqli, $query_pilihan);
+                            $num = 2;
+                            while($pilihan = mysqli_fetch_assoc($result_pilihan)){
+                                if($pilihan['id'] == $row['jawaban']){
+                                    continue;
+                                }
+                                echo "<input class='opsi' type='text' name='opsi$num' value='".$pilihan['teks_pilihan']."' placeholder='Masukkan pilihan lain'><br>";
+                                echo "<input type='hidden' name='id_opsi$num' value='".$pilihan['id']."'>";
+                                $num++;
+                            }
+                        ?>
+                </td>
+                        <!-- <label for="opsi2"></label>
                         <input class="opsi" type="text" name="opsi2" placeholder="Masukkan pilihan lain"><br>
 
                         <label for="opsi3"></label>
                         <input class="opsi" type="text" name="opsi3" placeholder="Masukkan pilihan lain"><br>
 
                         <label for="opsi4"></label>
-                        <input class="opsi" type="text" name="opsi4" placeholder="Masukkan pilihan lain">
+                        <input class="opsi" type="text" name="opsi4" placeholder="Masukkan pilihan lain"> -->
                 </tr>
 
                 <tr>
