@@ -143,7 +143,7 @@
                         <label for="nama"><?php echo $user_row['username'] ?></label><br>
                         <input type="text" name="nama" id="nama" value="<?php echo $row['komentar'] ?>"><br><br>
   
-                        <a href="komentar.php?id=<?php echo $id ?>">Lihat semua komentar</a>
+                        <a href="komentar.php?id=<?php echo $id ?>&mapel=<?php echo $mapel ?>">Lihat semua komentar</a>
                     </td>
                 </tr>
                 <tr>

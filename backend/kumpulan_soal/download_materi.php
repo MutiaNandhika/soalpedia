@@ -40,7 +40,7 @@
       </div>
       <div class="menuAwal">
         <!-- Menu Latihan dan Kumpulan -->
-        <a class="menuLatihan" href="../latihan_soal/draft_quiz.html">Latihan Soal</a>
+        <a class="menuLatihan" href="../latihan_soal/draft_quiz.php?id=<?php echo $mapel ?>">Latihan Soal</a>
         <a class="menuKumpulan" href="">Kumpulan Soal</a>
       </div>
       <div class="btnAwal">

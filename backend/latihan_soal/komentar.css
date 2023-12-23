@@ -162,7 +162,7 @@ body {
   margin-bottom: 10px;
   border: 1px solid #9656a1;
   border-radius: 10px;
-  justify-content: center;
+  justify-content: left;
 }
 .isi-komen p {
   width: auto;

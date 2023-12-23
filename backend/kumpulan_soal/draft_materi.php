@@ -75,9 +75,9 @@
     </div>
     
     <center>
-      <div class="main">
-        <!-- Nama Mapel -->
-          <div class="namaMapel">
+    <div class="main">
+      <!-- Nama Mapel -->
+      <div class="namaMapel">
             <?php if(isset($_GET['id'])) : ?>
               <?php
                 $id = $_GET['id'];
@@ -90,35 +90,44 @@
               <p>Semua Materi</p>
             <?php endif ?>
           </div>
-  
-        <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa,Editor -->
-        <div class="dropdown">
-          <button>Pilih Kelas</button>
-          <div class="dropdown-content">
-            <a href="#">Kelas 12</a>
-            <a href="#">Kelas 11</a>
-            <a href="#">Kelas 10</a>
-          </div>
+
+      <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa -->
+      <div class="dropdown">
+        <button>Pilih Kelas</button>
+        <div class="dropdown-content">
+          <a href="#">Kelas 12</a>
+          <a href="#">Kelas 11</a>
+          <a href="#">Kelas 10</a>
         </div>
-  
-        <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
-        <?php if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
-        <div class="tambahSoal">
-          <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
-          <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Kategori</a>
-        </div>
-        <?php endif ?>
-  
-        <!-- Searching -->
-          <div class="search">
-              <label for="search"></label>
-              <input type="text" name="search" placeholder="Cari...">
-          </div>
       </div>
-      </center>
+
+      <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
+      <div class="tambahSoal">
+        <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
+        <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Soal</a>
+      </div>
+
+      <!-- Kesulitan -->
+      <div class="kesulitan">
+        <select class="level" name="kesulitan" id="kesulitan">
+          <option value="Kesulitan Soal">Kesulitan Soal</option>
+          <option value="mudah">Mudah</option>
+          <option value="sulit">Sulit</option>
+        </select>
+      </div>
+
+      <!-- Searching -->
+        <div class="search">
+            <label for="search"></label>
+            <input type="text" name="search" placeholder="Cari...">
+        </div>
+    </div>
+    </center>
+    <div class='draft'>
       <?php 
+        $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+        $kategori = mysqli_query($mysqli, $query);  
         while($row = mysqli_fetch_assoc($kategori)){
-          echo "<div class='draft'>";
           echo "<div class='draftMapel'>";
           echo "<div class='listMapel'>";
           echo "<img src='../gambar/materi.svg' alt=''>";
@@ -131,9 +140,9 @@
             echo "</div>";
           }
           echo "</div>";
-          echo "</div>";
         }
       ?>
+    </div>
     <!-- <div class="draft">
         <div class="draftMapel">
             List Materi

@@ -5,6 +5,7 @@
         header("Location: logres.php");
     }
     $id = $_GET['id'];
+    $mapel = $_GET['mapel'];
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +43,8 @@
     </nav>
 
     <div class="heading">
-      <a href="../mapel/mapel.php"><img src="../icon/back.svg" alt=""></a>
-      <a href="../mapel/mapel.php">Back</a>
+      <a href="../latihan_soal/draft_quiz.php?id=<?php echo $mapel?>"><img src="../icon/back.svg" alt=""></a>
+      <a href="../latihan_soal/draft_quiz.php?id=<?php echo $mapel?>">Back</a>
     </div>
 
     <center>
@@ -67,10 +68,15 @@
                           echo "<span>".$user['username']." - ".$user['role']."</span>";
                           echo "<div class='isi-komen'>";
                           echo "<p>".$row['komentar']."</p>";
-                          if ($_SESSION['role'] == 'admin'|| $_SESSION['role'] == 'guru') {
-                            echo "<a href='delete_komentar.php?id=".$row['id']."'><img src='../icon/trash.svg'></a>";
+                          if ($_SESSION['role'] == 'siswa') {
+                            if ($_SESSION['id'] == $row['id_user']) {
+                              echo "<button><a href='delete_komentar.php?id=".$row['id']."'><img src='../icon/trash.svg'></a></button>";
+                            }
                           }
-                          echo "<button><img src='../icon/trash.svg'></button>";
+                          if($_SESSION['role'] == 'editor' || $_SESSION['role'] == 'admin'){
+                            echo "<button><a href='delete_komentar.php?id=".$row['id']."'><img src='../icon/trash.svg'></a></button>";
+                          }
+                          
                           echo "</div>";
                           echo "</div>";
 

@@ -22,6 +22,10 @@
 
     $query = "SELECT * FROM soal WHERE id_kategori = $id LIMIT $halamanaktif , 1";
     $soal = mysqli_query($mysqli, $query);
+    if(mysqli_num_rows($soal) == 0){
+      echo "<script>alert('Soal tidak ditemukan!');window.history.back();</script>";
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -218,7 +222,13 @@
               value="Usulan Perbaikan"
             />
             <label for="perbaikan">Usulan Perbaikan</label><br /><br />
-
+            <?php
+              $soal_query = "SELECT * FROM soal WHERE id_kategori = $id LIMIT $halamanaktif , 1";
+              $soal = mysqli_query($mysqli, $soal_query);
+              $row = mysqli_fetch_assoc($soal);
+              echo "<input type='hidden' name='id' value='".$row['id']."'>";
+              echo $row['id'];
+            ?>
             <button class="kirim" type="submit">Kirim</button>
             <button class="batal" type="button">Batal</button>
           </div>

@@ -1,3 +1,12 @@
+<?php
+    require_once '../config.php';
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: logres.php");
+    }
+    $id = $_GET['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
