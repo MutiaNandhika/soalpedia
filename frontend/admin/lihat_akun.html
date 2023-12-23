@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabel User</title>
+
+    <link rel="stylesheet" href="lihat.css" />
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+    <nav class="header">
+      <div class="logo1">
+        <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
+      </div>
+      <div class="menuAwal">
+        <!-- Menu Latihan dan Kumpulan -->
+        <a class="menuLatihan" href=""></a>
+        <a class="menuKumpulan" href=""></a>
+      </div>
+      <div class="btnAwal">
+        <!-- Buat nama user --><a class="btnMasuk" href="">Halo, Admin</a>
+        <!-- Tombol Logout --><a class="btnDaftar" href="../logres.html">Keluar</a>
+      </div>
+    </nav>
+
+    <div class="heading">
+      <a href="../mapel/mapel.html"><img src="../icon/back.svg" alt=""></a>
+      <a href="../mapel/mapel.html">Back</a>
+    </div>
+
+    <center>
+        <div class="main">
+          <div class="tabel-user">
+            <p>Tabel User</p>
+          </div>
+        </div>
+
+        <div class="tambahUser">
+          <a class="add" href="tambah-user.html"><img src="../icon/add.svg" alt=""></a>
+          <a class="tambah" href="tambah-user.html">Tambah User</a>
+        </div>
+    </center>
+
+    <center>
+      <div class="download">
+        <!-- TABEL User -->
+        <table border="0" cellpadding="10" cellspacing="0">
+            <tr class="tag-head">
+                <th>No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Aksi</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Farah</td>
+                <td>www@gmail.com</td>
+                <td>Siswa</td>
+                <td>
+                  <div class="icon">
+                    <!-- Tombol Edit Porfil -->
+                    <a class="edit" href="../mapel/edit-profil.html"><img src="../icon/edit.svg" alt=""></a>
+
+                    <!-- Tombol Hapus -->
+                    <a class="trash" href=""><img src="../icon/trash.svg" alt=""></a>
+                  </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+    </center>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="copyRight">&copy; 2023, SoalPedia</p>
+    </footer>
+  </body>
+</html>

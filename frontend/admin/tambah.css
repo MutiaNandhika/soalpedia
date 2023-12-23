@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", sans-serif, "Poppins";
+  text-decoration: none;
 }
 
 .header {
@@ -60,38 +61,21 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.btnMasuk {
+.user {
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
   color: black;
-}
-.btnMasuk:hover {
-  color: #9656a1;
-}
-.btnDaftar {
-  font-family: "Poppins";
-  font-size: 20px;
-  font-weight: 600;
-  color: #9656a1;
-  margin-left: 20px;
-  border: 1px solid #9656a1;
-  border-radius: 20px;
-  padding: 5px 20px;
-}
-.btnDaftar:hover {
-  background-color: #9656a1;
-  color: white;
+  margin-left: 30%;
 }
 
 .heading {
-  margin-left: 6%;
+  margin-left: 4%;
   margin-right: auto;
   width: 30%;
   height: auto;
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
 }
 .heading a {
   font-family: "Poppins";
@@ -107,71 +91,87 @@ body {
 }
 
 .main {
+  width: auto;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  width: 90%;
-  height: auto;
-  background-color: #eb5757;
-  margin-left: auto;
+  flex-direction: column;
+  margin-left: 8%;
   margin-right: auto;
-  justify-content: right;
-  border-radius: 10px;
 }
-.perbaikan {
-  width: 50%;
-  margin-left: 20px;
-  margin-right: auto;
+.main span {
   font-family: "Poppins";
-  color: white;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 600;
-  text-align: left;
+  color: black;
+  margin-bottom: 20px;
+}
+table tr td {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 20px;
+}
+table tr td input {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 240px;
+}
+table tr td input::placeholder {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  color: grey;
+}
+.role {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 240px;
+  cursor: pointer;
 }
 
-.download {
-  width: 90%;
-  height: 100vh;
-  background-color: transparent;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  text-align: center;
+.cancel {
   font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 500;
   color: black;
+  border: 1px solid #9656a1;
+  border-radius: 7px;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  margin-top: 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }
-.download table {
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
-  background-color: transparent;
-  margin-top: 10px;
-}
-.download table tr {
-  border-bottom: 1px solid grey;
-}
-.tag-head {
-  text-align: center;
-  border: none;
-  background-color: #e78fb3;
-}
-.tag-head th {
-  font-family: "Poppins";
-  font-size: 20px;
-  font-weight: 400;
+.cancel:hover {
+  background-color: #9656a1;
   color: white;
 }
-.trash img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  background-color: #b20040;
-  padding: 3px;
-  border-radius: 5px;
+.submit {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  border: 1px solid #9656a1;
+  border-radius: 7px;
+  width: 100px;
+  height: 30px;
+  background-color: #9656a1;
+  margin-top: 20px;
+  cursor: pointer;
 }
-.trash img:hover {
-  background-color: #e78fb3;
+.submit:hover {
+  background-color: white;
+  color: #9656a1;
 }
 
 footer {

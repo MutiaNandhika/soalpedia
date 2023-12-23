@@ -16,11 +16,30 @@ body {
   width: 25%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
 }
 .logoAwal {
   width: 100px;
   height: 100px;
   margin-left: 30px;
+}
+.user-list{
+  width: auto;
+  height: auto;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin: auto;
+  margin-left: 30px;
+  background-color: #9656a1;
+  font-family: 'Poppins';
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+.user-list:hover{
+  background-color: transparent;
+  color: #9656a1;
 }
 .menuAwal {
   width: 50%;
@@ -54,7 +73,7 @@ body {
 }
 
 .btnAwal {
-  width: 25%;
+  width: 40%;
   text-align: center;
   margin-top: 40px;
   margin-left: auto;
@@ -69,12 +88,29 @@ body {
 .btnMasuk:hover {
   color: #9656a1;
 }
+.edit-profil {
+  width: auto;
+  height: auto;
+  margin: auto;
+  margin-left: 10px;
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: #9656a1;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+.edit-profil:hover{
+  background-color: transparent;
+  color: #9656a1;
+}
 .btnDaftar {
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;
   color: #9656a1;
-  margin-left: 20px;
+  margin-left: 10px;
   border: 1px solid #9656a1;
   border-radius: 20px;
   padding: 5px 20px;

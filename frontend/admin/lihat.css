@@ -111,13 +111,13 @@ body {
   flex-direction: row;
   width: 90%;
   height: auto;
-  background-color: #eb5757;
+  background-color: #9656a1;
   margin-left: auto;
   margin-right: auto;
   justify-content: right;
   border-radius: 10px;
 }
-.perbaikan {
+.tabel-user {
   width: 50%;
   margin-left: 20px;
   margin-right: auto;
@@ -128,6 +128,33 @@ body {
   text-align: left;
 }
 
+.tambahUser {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: auto;
+  background-color: #9656a1;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 5%;
+  padding: 3px 3px 0 3px;
+  justify-content: center;
+}
+.tambahUser:hover {
+  background-color: #e8da5d;
+}
+.add img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+.tambah {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
 .download {
   width: 90%;
   height: 100vh;
@@ -162,10 +189,28 @@ body {
   font-weight: 400;
   color: white;
 }
+.icon {
+  width: 15%;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.edit img {
+  width: 25px;
+  height: 25px;
+  background-color: #e8da5d;
+  padding: 3px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.edit img:hover {
+  background-color: #e78fb3;
+}
 .trash img {
   width: 25px;
   height: 25px;
-  margin-right: 5px;
   background-color: #b20040;
   padding: 3px;
   border-radius: 5px;
