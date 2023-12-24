@@ -88,7 +88,7 @@
         </div>
         <?php endif ?>
   
-        <!-- Searching -->
+         <!-- Searching -->
           <div class="search">
               <label for="search"></label>
               <input type="text" name="search" placeholder="Cari...">

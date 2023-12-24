@@ -23,6 +23,6 @@
         $delete_soal = "DELETE FROM soal WHERE id = $id_soal";
         mysqli_query($mysqli, $delete_soal);
     }
-    echo "<script>alert('soal berhasil dihapus!');window.location.href='download-latihan.php?id=".$mapel."&kategori=".$kategori."';</script>";
+    echo "<script>alert('soal berhasil dihapus!');window.location.href='download-latihan.php?id=".$mapelzz ."&kategori=".$kategori."';</script>";
     
 ?>

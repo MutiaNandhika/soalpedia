@@ -6,6 +6,14 @@
   }
   if(isset($_GET['id'])){
     $id = $_GET['id'];
+    if (!isset($_GET['kelas'])) {
+      $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+      $kategori = mysqli_query($mysqli, $query);
+    } else {
+      $kelas = $_GET['kelas'];
+      $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kelas = $kelas";
+      $kategori = mysqli_query($mysqli, $query);
+    }
     $query = "SELECT * FROM kategori WHERE id_mapel = $id";
     $kategori = mysqli_query($mysqli, $query);
   } else {
@@ -95,27 +103,18 @@
       <div class="dropdown">
         <button>Pilih Kelas</button>
         <div class="dropdown-content">
-          <a href="#">Kelas 12</a>
-          <a href="#">Kelas 11</a>
-          <a href="#">Kelas 10</a>
+          <a href="draft_materi.php?id=<?php echo $id ?>&kelas=12">Kelas 12</a>
+          <a href="draft_materi.php?id=<?php echo $id ?>&kelas=11">Kelas 11</a>
+          <a href="draft_materi.php?id=<?php echo $id ?>&kelas=10">Kelas 10</a>
         </div>
       </div>
       <?php if($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') : ?>
       <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
       <div class="tambahSoal">
         <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Soal</a>
+        <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah kategori</a>
       </div>
       <?php endif ?>
-      <!-- Kesulitan -->
-      <div class="kesulitan">
-        <select class="level" name="kesulitan" id="kesulitan">
-          <option value="Kesulitan Soal">Kesulitan Soal</option>
-          <option value="mudah">Mudah</option>
-          <option value="sulit">Sulit</option>
-        </select>
-      </div>
-
       <!-- Searching -->
         <div class="search">
             <label for="search"></label>
