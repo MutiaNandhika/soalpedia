@@ -106,6 +106,7 @@
                     <form action="proses_komentar.php" method="POST">
                             <input type="hidden" name="id_kategori" value="<?php echo $id ?>">
                             <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>">
+                            <input type="hidden" name="mapel" value="<?php echo $mapel ?>">
                             <input type="text" name="komentar" placeholder="Kirim Komentar...">
                             <label for="submit"></label>
                             <button type="submit"><img src="../icon/submit.svg" alt=""></button>

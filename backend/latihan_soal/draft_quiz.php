@@ -129,7 +129,7 @@
             echo "<div class='draftQuiz'>";
             echo "<div class='listQuiz'>";
             echo "<img src='../gambar/quiz.svg' alt=''>";
-            echo "<a class='quiz-1' href='soal.php?id=".$row['id']."&mapel=".$id."'>".$row['kategori']."</a>";
+            echo "<a class='quiz-1' href='soal.php?id=".$row['id']."&mapel=".$id."&halaman=1'>".$row['kategori']."</a>";
             echo "</div>";
             if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') {
                 echo "<div class='icon'>";

@@ -15,6 +15,7 @@
     $halamanaktif = (isset($_GET["halaman"])) ? $_GET["halaman"]-1 : 0;
     if(isset($_POST['simpan'])){
       if(isset($_POST['jawaban'.$_GET['halaman']])){
+        echo "<script>alert('Jawaban berhasil disimpan!');</script>";
         $_SESSION['answers'.$_GET['halaman']] = $_POST['jawaban'.$_GET['halaman']];
         $_SESSION['id_soal'.$_GET['halaman']] = $_POST['id_soal'.$_GET['halaman']];
       }
