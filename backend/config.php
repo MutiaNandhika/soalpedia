@@ -7,4 +7,3 @@
 
     $mysqli = mysqli_connect($databasehost, $databaseusername, $databasepassword, $databasename);
 ?>
-

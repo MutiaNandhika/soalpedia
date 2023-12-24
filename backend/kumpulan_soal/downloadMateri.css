@@ -328,6 +328,15 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+.nama{
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 400;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .dropdown1 {
   position: relative;
   display: inline-block;

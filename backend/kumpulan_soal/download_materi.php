@@ -115,7 +115,7 @@
                 $result = mysqli_query($mysqli, $pemilik);
                 $user = mysqli_fetch_assoc($result);
                 $pemilik = $user['nama'];
-                echo "<td>".$nama."";
+                echo "<td class='nama'>".$nama."";
                 echo '<form action="../laporan_soal/proses_laporan_file.php" method="POST">
                 <div class="dropdown1">
                   <img src="../icon/info.svg" alt="" />

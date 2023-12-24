@@ -45,8 +45,8 @@
       <?php endif?>
       <?php if($_SESSION['login']) : ?>
       <div class="btnAwal">
-      <a class="edit-profil" href="edit-profil.php">Edit Profil</a>
         <a class="btnMasuk" href="../index.php">Selamat Datang <?php echo $_SESSION['username'] ?></a>
+        <a class="edit-profil" href="edit-profil.php">Edit Profil</a>
         <a class="btnDaftar" href="../logout.php">Keluar</a>
       </div>
       <?php endif?>

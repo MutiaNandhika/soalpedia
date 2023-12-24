@@ -112,7 +112,7 @@
       <!-- Menu Tambah Soal hanya bisa buat User Guru dan Admin -->
       <div class="tambahSoal">
         <a class="add" href="form-kategori.php?id=<?php echo $id ?>"><img src="../icon/add.svg" alt=""></a>
-        <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah kategori</a>
+        <a class="tambah" href="form-kategori.php?id=<?php echo $id ?>">Tambah Kategori</a>
       </div>
       <?php endif ?>
       <!-- Searching -->
