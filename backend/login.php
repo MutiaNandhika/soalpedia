@@ -14,7 +14,7 @@
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['role'];
-            echo "<script>alert('Berhasil masuk!');window.location.href='mapel/mapel.php';</script>";
+            echo "<script>alert('Berhasil masuk!');window.location.href='index.php';</script>";
         } else {
             echo "<script>alert('Password salah!');window.location.href='logres.php';</script>";
         }

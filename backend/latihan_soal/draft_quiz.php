@@ -112,7 +112,7 @@
       <!-- Searching -->
       <div class="search">
         <form class="cari" action="" method="post">
-          <button>
+          <button type = "submit" name = "cari">
             <img src="../icon/search.svg" alt="">
           </button>
           <label for="search"></label>
@@ -124,10 +124,20 @@
     <div class='draft'>
     <?php
         if(!isset($_GET['kelas'])){
-            $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+            if (isset($_POST['cari'])) {
+                $search = $_POST['search'];
+                $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kategori LIKE '%$search%'";
+            } else {
+                $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+            }
         } else {
             $kelas = $_GET['kelas'];
-            $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kelas = $kelas";
+            if (isset($_POST['cari'])) {
+                $search = $_POST['search'];
+                $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kategori LIKE '%$search%' AND kelas = $kelas";
+            } else {
+                $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kelas = $kelas";
+            }
         }
         
         $result = mysqli_query($mysqli, $query);

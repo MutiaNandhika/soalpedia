@@ -7,20 +7,36 @@
   if(isset($_GET['id'])){
     $id = $_GET['id'];
     if (!isset($_GET['kelas'])) {
-      $query = "SELECT * FROM kategori WHERE id_mapel = $id";
-      $kategori = mysqli_query($mysqli, $query);
-    } else {
+      if (isset($_POST['cari'])) {
+          $search = $_POST['search'];
+          $id = $_GET['id'];
+          $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kategori LIKE '%$search%'";
+          $kategori = mysqli_query($mysqli, $query);
+      } else {
+          $query = "SELECT * FROM kategori WHERE id_mapel = $id";
+          $kategori = mysqli_query($mysqli, $query);
+      }
+  } else {
       $kelas = $_GET['kelas'];
-      $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kelas = $kelas";
-      $kategori = mysqli_query($mysqli, $query);
-    }
-    $query = "SELECT * FROM kategori WHERE id_mapel = $id";
-    $kategori = mysqli_query($mysqli, $query);
+      if (isset($_POST['cari'])) {
+          $search = $_POST['search'];
+          $id = $_GET['id'];
+          $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kategori LIKE '%$search%' AND kelas = $kelas";
+          $kategori = mysqli_query($mysqli, $query);
+      } else {
+          $query = "SELECT * FROM kategori WHERE id_mapel = $id AND kelas = $kelas";
+          $kategori = mysqli_query($mysqli, $query);
+      }
+  }
   } else {
     $query = "SELECT * FROM kategori";
     $kategori = mysqli_query($mysqli, $query);
   }
   $mapel = $_GET['mapel'];
+  // echo $query;
+  // while ($row = mysqli_fetch_assoc($kategori)) {
+  //   echo $row['kategori'];
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -118,9 +134,9 @@
       <!-- Searching -->
       <div class="search">
         <form class="cari" action="" method="post">
-          <button>
+          <button type="submit" name = "cari">
             <img src="../icon/search.svg" alt="">
-          </button>
+          </button >
           <label for="search"></label>
           <input type="text" name="search" placeholder="Cari...">
         </form>
@@ -128,9 +144,7 @@
     </div>
     </center>
     <div class='draft'>
-      <?php 
-        $query = "SELECT * FROM kategori WHERE id_mapel = $id";
-        $kategori = mysqli_query($mysqli, $query);  
+      <?php
         while($row = mysqli_fetch_assoc($kategori)){
           echo "<div class='draftMapel'>";
           echo "<div class='listMapel'>";

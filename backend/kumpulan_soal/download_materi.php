@@ -6,8 +6,15 @@
   }
   if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $query = "SELECT * FROM master_soal WHERE id_kategori = $id";
-    $file = mysqli_query($mysqli, $query);
+    if (isset($_POST['cari'])) {
+      $search = $_POST['search'];
+      $id = $_GET['id'];
+      $query = "SELECT * FROM master_soal WHERE id_kategori = $id AND nama_file LIKE '%$search%'";
+      $file = mysqli_query($mysqli, $query);
+    } else {
+      $query = "SELECT * FROM master_soal WHERE id_kategori = $id";
+      $file = mysqli_query($mysqli, $query);
+    }
   } else {
     $query = "SELECT * FROM master_soal";
     $file = mysqli_query($mysqli, $query);
@@ -91,7 +98,7 @@
          <!-- Searching -->
         <div class="search">
           <form class="cari" action="" method="post">
-            <button>
+            <button type="submit" name = "cari">
               <img src="../icon/search.svg" alt="">
             </button>
             <label for="search"></label>

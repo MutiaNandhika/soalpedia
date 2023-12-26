@@ -1,3 +1,7 @@
+<?php
+    require_once '../config.php';
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,8 +29,13 @@
         <a href="../soal/kumpulanSoal.html"></a>
       </div>
       <div class="btnAwal">
+      <?php if (!isset($_SESSION['login'])):  ?>
         <a class="btnMasuk" href="../logres.php">Masuk</a>
         <a class="btnDaftar" href="../logres.php">Daftar</a>
+      <?php else: ?>
+        <a class="btnMasuk" href="">Halo, <?php echo $_SESSION['username'] ?></a>
+        <a class="btnDaftar" href="../logout.php">Keluar</a>
+      <?php endif; ?>
       </div>
     </nav>
 

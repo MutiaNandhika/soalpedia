@@ -6,8 +6,15 @@
     }
     $id = $_GET['id'];
     $kategori = $_GET['kategori'];
-    $query = "select * from soal where id_kategori = $id";
-    $result = mysqli_query($mysqli, $query);
+    if (isset($_POST['cari'])) {
+        $search = $_POST['search'];
+        $id = $_GET['id'];
+        $query = "SELECT * FROM soal WHERE id_kategori = $id AND pertanyaan LIKE '%$search%'";
+        $result = mysqli_query($mysqli, $query);
+    } else {
+        $query = "SELECT * FROM soal WHERE id_kategori = $id";
+        $result = mysqli_query($mysqli, $query);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,10 +93,15 @@
         </div>
   
         <!-- Searching -->
-          <div class="search">
-              <label for="search"></label>
-              <input type="text" name="search" placeholder="Cari...">
-          </div>
+        <div class="search">
+        <form class="cari" action="" method="post">
+          <button type="submit" name = "cari">
+            <img src="../icon/search.svg" alt="">
+          </button >
+          <label for="search"></label>
+          <input type="text" name="search" placeholder="Cari...">
+        </form>
+     </div>
       </div>
 
       <div class="download">
