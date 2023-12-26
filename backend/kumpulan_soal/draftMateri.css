@@ -234,8 +234,7 @@ body {
 .tambahSoal {
   display: flex;
   flex-direction: row;
-  width: 12%;
-  height: auto;
+  width: 15%;
   background-color: #9656a1;
   border-radius: 5px;
   margin: auto 0;
@@ -310,7 +309,7 @@ body {
   flex-direction: row;
   width: 10%;
   margin: auto 0;
-  margin-left: auto;
+  margin-left: 30%;
   margin-right: 20px;
 }
 .level {
@@ -336,25 +335,47 @@ body {
 }
 
 .search {
-  width: 23%;
+  width: 20%;
   height: auto;
-  margin-left: auto;
+  margin: auto;
+  margin-right: 10px;
 }
-.search input {
-  width: 80%;
+.cari {
+  width: auto;
   height: 30px;
   border-radius: 20px;
   border: none;
   padding-left: 20px;
-  font-family: "PT Sans";
-  font-size: 14px;
-  font-weight: 400;
-  color: black;
   background-color: white;
   outline: none;
-  margin-top: 18px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+.cari button {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.cari button img {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  margin-right: 10px;
+}
+.cari input {
+  width: auto;
+  height: auto;
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .draft {

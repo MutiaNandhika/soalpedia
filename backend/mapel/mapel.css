@@ -13,8 +13,9 @@ body {
   width: 100%;
 }
 .logo1 {
-  width: 25%;
-  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-left: 10px;
   margin-right: auto;
   display: flex;
   flex-direction: row;
@@ -30,7 +31,7 @@ body {
   padding: 4px 10px;
   border-radius: 10px;
   margin: auto;
-  margin-left: 30px;
+  margin-left: 0;
   background-color: #9656a1;
   font-family: 'Poppins';
   font-size: 15px;
@@ -41,45 +42,16 @@ body {
   background-color: transparent;
   color: #9656a1;
 }
-.menuAwal {
-  width: 50%;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  text-align: center;
-}
-.menuLatihan,
-.menuKumpulan {
-  font-family: "Poppins";
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-  border: none;
-}
-.menuLatihan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
-  transition: 0.5s;
-}
-.menuKumpulan:hover {
-  color: #9656a1;
-  border-bottom: 1px solid #9656a1;
-  transition: 0.5s;
-}
-.menuLatihan {
-  margin-right: 20px;
-}
 
 .btnAwal {
-  width: 40%;
+  width: auto;
+  height: auto;
   text-align: center;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  margin-right: 30px;
 }
 .btnMasuk {
+  width: auto;
   font-family: "Poppins";
   font-size: 20px;
   font-weight: 600;

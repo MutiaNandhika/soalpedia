@@ -81,7 +81,7 @@
             <?php else : ?>
               <p>Semua Materi</p>
             <?php endif ?>
-          </div>
+      </div>
 
       <!-- Dropdown Pilih Kelas buat User Guru,Admin,Siswa -->
       <div class="dropdown">
@@ -99,6 +99,7 @@
         <a class="tambah" href="../kumpulan_soal/form-kategori.php?id=<?php echo $id?>">Tambah Kategori</a>
       </div>
       <?php endif ?>
+
       <!-- Kesulitan -->
       <div class="kesulitan">
         <select class="level" name="kesulitan" id="kesulitan">
@@ -109,10 +110,15 @@
       </div>
 
       <!-- Searching -->
-        <div class="search">
-            <label for="search"></label>
-            <input type="text" name="search" placeholder="Cari...">
-        </div>
+      <div class="search">
+        <form class="cari" action="" method="post">
+          <button>
+            <img src="../icon/search.svg" alt="">
+          </button>
+          <label for="search"></label>
+          <input type="text" name="search" placeholder="Cari...">
+        </form>
+     </div>
     </div>
     </center>
     <div class='draft'>
@@ -129,7 +135,7 @@
             echo "<div class='draftQuiz'>";
             echo "<div class='listQuiz'>";
             echo "<img src='../gambar/quiz.svg' alt=''>";
-            echo "<a class='quiz-1' href='soal.php?id=".$row['id']."&mapel=".$id."&halaman=1'>".$row['kategori']."</a>";
+            echo "<a class='quiz-1' href='soal.php?id=".$row['id']."&mapel=".$id."'>".$row['kategori']."</a>";
             echo "</div>";
             if ($_SESSION['role'] == 'guru' || $_SESSION['role'] == 'admin') {
                 echo "<div class='icon'>";

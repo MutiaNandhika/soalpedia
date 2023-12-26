@@ -58,9 +58,6 @@
             </tr>
             <?php
                 while($row = mysqli_fetch_assoc($laporan)){
-                    if ($row['id_file'] == NULL) {
-                        continue;
-                    }
                     $id = $row['id_file'];
                     $query = "SELECT * FROM master_soal WHERE id = $id";
                     $files = mysqli_fetch_assoc(mysqli_query($mysqli, $query));

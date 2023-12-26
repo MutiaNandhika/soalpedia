@@ -23,7 +23,6 @@
         } else {
             $query = "UPDATE user SET nama = '$nama', username = '$username', email = '$email', role = '$role' WHERE id = $id";
             mysqli_query($mysqli, $query);
-            $_SESSION['username'] = $username;
             echo "<script>alert('profil berhasil diubah!');window.location.href='mapel.php';</script>";
         }
     }

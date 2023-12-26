@@ -27,16 +27,13 @@
   </head>
   <body>
     <nav class="header">
+      <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
       <div class="logo1">
-        <img class="logoAwal" src="../gambar/logo2.svg" alt="SoalPedia" />
         <?php if ($_SESSION['role'] == 'admin') : ?>
         <a class="user-list" href="../admin/lihat_akun.php">Lihat Tabel User</a>
         <?php endif ?>
       </div>
-      <div class="menuAwal">
-        <a class="menuLatihan" href=""></a>
-        <a class="menuKumpulan" href=""></a>
-      </div>
+
       <?php if(!$_SESSION['login']) : ?>
       <div class="btnAwal">
         <a class="btnMasuk" href="../logres.php">Masuk</a>
@@ -44,6 +41,7 @@
       </div>
       <?php endif?>
       <?php if($_SESSION['login']) : ?>
+
       <div class="btnAwal">
         <a class="btnMasuk" href="../index.php">Selamat Datang <?php echo $_SESSION['username'] ?></a>
         <a class="edit-profil" href="edit-profil.php">Edit Profil</a>

@@ -116,10 +116,15 @@
       </div>
       <?php endif ?>
       <!-- Searching -->
-        <div class="search">
-            <label for="search"></label>
-            <input type="text" name="search" placeholder="Cari...">
-        </div>
+      <div class="search">
+        <form class="cari" action="" method="post">
+          <button>
+            <img src="../icon/search.svg" alt="">
+          </button>
+          <label for="search"></label>
+          <input type="text" name="search" placeholder="Cari...">
+        </form>
+     </div>
     </div>
     </center>
     <div class='draft'>
